@@ -65,11 +65,11 @@ client.on("message", message => {
                           .setAuthor(message.author.username, message.author.avatarURL) 
                           .setColor('GOLD')
                         .setTitle(`TEST`)
-                        .addField('> `TEAM    :`', ` ** ${name} ** \n` , true)
-                        .addField('\n > `CAPTIAN :`', ` ** ${age} ** \n` , true)
-                        .addField('\n > `PLAYER 1:`',`** ${ask} ** \n` , true)
-                        .addField('\n > `PLAYER 2:` ',` ** ${ask2} ** \n` , true)
-                        .addField('\n > `PLAYER 3:`',` ** ${ask3} ** \n` , true)
+                        .addField('\u200B\n> `TEAM    :`', ` ** ${name} ** \u200B\n` , true)
+                        .addField('\u200B\n> `CAPTIAN :`', ` ** ${age} ** \u200B\n` , true)
+                        .addField('\u200B\n> `PLAYER 1:`',`** ${ask} ** \u200B\n` , true)
+                        .addField('\u200B\n> `PLAYER 2:` ',` ** ${ask2} ** \u200B\n` , true)
+                        .addField('\u200B\n> `PLAYER 3:`',` ** ${ask3} ** \u200B\n` , true)
                         channel.send(embed)
                         }, 2500);
                         setTimeout(() => {
