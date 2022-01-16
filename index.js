@@ -16,7 +16,7 @@ client.on("message", message => {
   if(message.content.startsWith(prefix+"طلب")) {//  بدء التقديم
         if(!message.channel.guild) return;
                 if(message.author.bot) return;
-        let channel = message.guild.channels.cache.find(ch => ch.id === '932408004144422972')// اي دي روم التقديم
+        let channel = message.guild.channels.cache.find(ch => ch.id === '932416395524849734')// اي دي روم التقديم
             if(!channel) return message.reply("**لانشاء روم التقديمات !!setsubmissions من فضلك اكتب الامر**")
             if(channel) {
               message.channel.send(message.author.username + '`1`').then((m)=>{
