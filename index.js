@@ -66,7 +66,7 @@ client.on("message", message => {
                           .setColor('GOLD')
                         .setTitle(`TEST`)
                         .addField('> `TEAM    :`', ` ** ${name} ** ` , true)
-                        .addField('\u200B\n', )
+                        .addField('\u200B\n', ════════════════════════════════════════)
                         .addField('> `CAPTIAN :`', ` ** ${age} ** ` , true)
                         .addField('> `PLAYER 1:`',`** ${ask} ** ` , true)
                         .addField('> `PLAYER 2:` ',` ** ${ask2} ** ` , true)
