@@ -10,7 +10,7 @@ app.use('/ping', (req, res) => {
 const Discord = require("discord.js");
 const moment = require('moment')
 const client = new Discord.Client();
-const prefix = "%"; // بادئة البوت
+const prefix = "1"; // بادئة البوت
 // كود تقديم ادارة
 client.on("message", message => { 
   if(message.content.startsWith(prefix+"تقديم")) {// كلمة بدء التقديم
@@ -117,4 +117,4 @@ client.on('message',async message => {
 });
 
 
-client.login("ODI4MzA0ODA3NzQyOTMwOTc0.YGno9w.obTXaBjiZVZrnfoioDnvRmhJaag")
+client.login(process.env.X)
