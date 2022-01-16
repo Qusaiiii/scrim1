@@ -64,12 +64,12 @@ client.on("message", message => {
                           let embed = new Discord.MessageEmbed()
                           .setAuthor(message.author.username, message.author.avatarURL) 
                           .setColor('GOLD')
-                        .setTitle(`\`تقديمك على الإدارة\` \n سوف يتم الرد عليك قريبا من الادارة , \n > ID: ${message.author.id}`)
-                        .addField('> `TEAM    :`', ` ** ${name} ** ` , true)
-                        .addField('> `CAPTIAN :`', ` ** ${age} ** ` , true)
-                        .addField('> `PLAYER 1:`',`** ${ask} ** ` , true)
-                        .addField('> `PLAYER 2:` ',` ** ${ask2} ** ` , true)
-                        .addField('> `PLAYER 3:`',` ** ${ask3} ** ` , true)
+                        .setTitle(`TEST`)
+                        .addField('> `TEAM    :`', ` ** ${name} ** \n` , true)
+                        .addField('> `CAPTIAN :`', ` ** ${age} ** \n` , true)
+                        .addField('> `PLAYER 1:`',`** ${ask} ** \n` , true)
+                        .addField('> `PLAYER 2:` ',` ** ${ask2} ** \n` , true)
+                        .addField('> `PLAYER 3:`',` ** ${ask3} ** \n` , true)
                         channel.send(embed)
                         }, 2500);
                         setTimeout(() => {
