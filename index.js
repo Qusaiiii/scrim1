@@ -13,30 +13,30 @@ const client = new Discord.Client();
 const prefix = "1"; // بادئة البوت
 // كود تقديم ادارة
 client.on("message", message => { 
-  if(message.content.startsWith(prefix+"تقديم")) {// كلمة بدء التقديم
+  if(message.content.startsWith(prefix+"طلب")) {//  بدء التقديم
         if(!message.channel.guild) return;
                 if(message.author.bot) return;
-        let channel = message.guild.channels.cache.find(ch => ch.id === '828305712287055873')// اي دي روم التقديم
+        let channel = message.guild.channels.cache.find(ch => ch.id === '932408004144422972')// اي دي روم التقديم
             if(!channel) return message.reply("**لانشاء روم التقديمات !!setsubmissions من فضلك اكتب الامر**")
             if(channel) {
               message.channel.send(message.author.username + '`1`').then((m)=>{
-            m.edit(message.author.username + ', ما هو اسمك').then( (m) =>{
+            m.edit(message.author.username + '**اسم الفريق؟**').then( (m) =>{
              m.channel.awaitMessages( m1 => m1.author == message.author,{ max: 1, time: 60*1000 } ).then ( (m1) => {
                   m1 = m1.first();
                   var name = m1.content;
                   m1.delete();
-
+   message.channel.send("..اكتب المنشن و الاسم في ببجي")
                   m.edit(message.author.username + '`2`').then( (m) =>{
-                      m.edit( message.author.username + ', كم عمرك ' )
+                      m.edit( message.author.username + ', **قائد الفريق؟**' )
                       setTimeout(() => {
                         m.delete()
                       }, 10000);
                       m.channel.awaitMessages( m2 => m2.author == message.author,{ max: 1, time: 60*1000 } ).then ( (m2) => {
                           m2 = m2.first();
                           var age = m2.content;
-                          m2.delete()
-                          message.channel.send( message.author.username + '`3`').then( (m) =>{
-                            m.edit( message.author.username + ' كم لك بالديسكورد' )
+                        
+                          message.channel.send(message.author.username + '`3`').then( (m) =>{
+                            m.edit( message.author.username + '**اللاعب الاول**' )
                             setTimeout(() => {
                               m.delete()
                             }, 10000);
@@ -45,7 +45,7 @@ client.on("message", message => {
                                 var ask = m3.content;
                                 m3.delete();
                                 message.channel.send( message.author.username + '`4`').then( (m) =>{
-                                  m.edit( message.author.username + ', لماذا تريد أن تصبح ضمن طاقم الإدارة ؟ !' )
+                                  m.edit( message.author.username + '**اللاعب الثاني **' )
                                   setTimeout(() => {
                                     m.delete()
                                   }, 10000);
@@ -54,7 +54,7 @@ client.on("message", message => {
                                       var ask2 = m4.content;
                                       m4.delete();
                                       message.channel.send(  message.author.username + '``5``').then( (m) =>{
-                                        m.edit( message.author.username + ', كم مدة تفاعلك' )
+                                        m.edit( message.author.username + '**اللاعب الثالث' )
                                         m.channel.awaitMessages( m1 => m1.author == message.author,{ max: 1, time: 60*1000 } ).then ( (m5) => {
                                             m5 = m5.first();
                                             var ask3 = m5.content;
@@ -65,12 +65,11 @@ client.on("message", message => {
                           .setAuthor(message.author.username, message.author.avatarURL) 
                           .setColor('GOLD')
                         .setTitle(`\`تقديمك على الإدارة\` \n سوف يتم الرد عليك قريبا من الادارة , \n > ID: ${message.author.id}`)
-                        .addField('> \`إسمك:\`', ` ** ${name} ** ` , true)
-                        .addField('> \`عمرك:\`', ` ** ${age} ** ` , true)
-                        .addField('> \`كم لك بالديسكورد:\`',`** ${ask} ** ` , true)
-                        .addField('> \` لماذا تريد أن تصبح ضمن طاقم الإدارة ؟:\` ',` ** ${ask2} ** ` , true)
-                        .addField('> \`مدة تفاعلك: ?\`',` ** ${ask3} ** ` , true)
-                        .addField('> __متى تم إنشاء حسابك: __',` \`${message.author.createdAt} \` ` , true)
+                        .addField('> \`TEAM    :\`', ` ** ${name} ** ` , true)
+                        .addField('> \`CAPTIAN :\`', ` ** ${age} ** ` , true)
+                        .addField('> \`PLAYER 1:\`',`** ${ask} ** ` , true)
+                        .addField('> \`PLAYER 2:\` ',` ** ${ask2} ** ` , true)
+                        .addField('> \`PLAYER 3:\`',` ** ${ask3} ** ` , true)
                         channel.send(embed)
                         }, 2500);
                         setTimeout(() => {
