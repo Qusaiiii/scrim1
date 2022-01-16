@@ -66,10 +66,10 @@ client.on("message", message => {
                           .setColor('GOLD')
                         .setTitle(`TEST`)
                         .addField('> `TEAM    :`', ` ** ${name} ** \n` , true)
-                        .addField('> `CAPTIAN :`', ` ** ${age} ** \n` , true)
-                        .addField('> `PLAYER 1:`',`** ${ask} ** \n` , true)
-                        .addField('> `PLAYER 2:` ',` ** ${ask2} ** \n` , true)
-                        .addField('> `PLAYER 3:`',` ** ${ask3} ** \n` , true)
+                        .addField('\n > `CAPTIAN :`', ` ** ${age} ** \n` , true)
+                        .addField('\n > `PLAYER 1:`',`** ${ask} ** \n` , true)
+                        .addField('\n > `PLAYER 2:` ',` ** ${ask2} ** \n` , true)
+                        .addField('\n > `PLAYER 3:`',` ** ${ask3} ** \n` , true)
                         channel.send(embed)
                         }, 2500);
                         setTimeout(() => {
