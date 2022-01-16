@@ -65,11 +65,11 @@ client.on("message", message => {
                           .setAuthor(message.author.username, message.author.avatarURL) 
                           .setColor('GOLD')
                         .setTitle(`\`تقديمك على الإدارة\` \n سوف يتم الرد عليك قريبا من الادارة , \n > ID: ${message.author.id}`)
-                        .addField('> \`TEAM    :\`', ` ** ${name} ** ` , true)
-                        .addField('> \`CAPTIAN :\`', ` ** ${age} ** ` , true)
-                        .addField('> \`PLAYER 1:\`',`** ${ask} ** ` , true)
-                        .addField('> \`PLAYER 2:\` ',` ** ${ask2} ** ` , true)
-                        .addField('> \`PLAYER 3:\`',` ** ${ask3} ** ` , true)
+                        .addField('> \`TEAM    :\n`', ` ** ${name} ** ` , true)
+                        .addField('> \n`CAPTIAN :\n`', ` ** ${age} ** ` , true)
+                        .addField('> \n`PLAYER 1:\n`',`** ${ask} ** ` , true)
+                        .addField('> \n`PLAYER 2:\n` ',` ** ${ask2} ** ` , true)
+                        .addField('> \n`PLAYER 3:\n`',` ** ${ask3} ** ` , true)
                         channel.send(embed)
                         }, 2500);
                         setTimeout(() => {
