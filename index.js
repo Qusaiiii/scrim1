@@ -157,7 +157,7 @@ function editLb(theMessage, newUser, newTime) {
             field.value = `999:99`;
         }
     })
-    let newTime = "re";
+  
     //add the newUser and the newTime to a new field
     acRoom.addField(`${newUser}`, `${newTime}`);
 
