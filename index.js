@@ -75,6 +75,8 @@ client.on("message", message => {
                         .addField('\u200B', '════════════════════════════════════════')
                         .addField('> `PLAYER 3:`',` ** ${ask3} ** ` , true)
                         channel.send(embed)
+                        message.react("✅")
+                        message.react("❎")
                         }, 2500);
                         setTimeout(() => {
                           mtime.delete()
