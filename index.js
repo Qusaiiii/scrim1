@@ -106,7 +106,7 @@ client.on("message", message => {
                           .setAuthor(message.author.username, message.author.avatarURL) 
                           .setColor('GOLD')
                         .setTitle(`Lobby 1`)
-                        .addField('> `Empty`')
+                        .addField('\u200B', 'EMPTY')
                           acRoom.send(embed)
  
  }
