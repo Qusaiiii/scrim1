@@ -113,7 +113,8 @@ client.on("message", message => {
         })
             })
               
-    }
+    })
+            }
 }
         });
 
