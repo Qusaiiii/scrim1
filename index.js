@@ -114,7 +114,7 @@ client.on("message", message => {
                         .addField('> `PLAYER 2:` ', true)
                         .addField('\u200B', '════════════════════════════════════════')
                         .addField('> `PLAYER 3:`', true)
-                          channel.send(embed)
+                          message.channel.send(embed)
  
  }
 });
