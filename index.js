@@ -103,7 +103,6 @@ client.on("message", message => {
   
   let acRoom = message.guild.channels.cache.find(ch => ch.id === '932431084132646942')
                           let embed = new Discord.MessageEmbed()
-                          .setAuthor(message.author.username, message.author.avatarURL) 
                           .setColor('GOLD')
                         .setTitle(`Lobby 1`)
                         .addField('\u200B', 'EMPTY')
