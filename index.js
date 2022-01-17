@@ -28,21 +28,27 @@ client.on("message", message => {
    message.channel.send("..اكتب المنشن و الاسم في ببجي")
                   m.edit(message.author.username + '`2`').then( (m) =>{
                       m.edit('**قائد الفريق؟**' )
-                    
+                                   setTimeout(() => {
+                                    m.delete()
+                                  }, 10000);                   
                       m.channel.awaitMessages( m2 => m2.author == message.author,{ max: 1, time: 60*1000 } ).then ( (m2) => {
                           m2 = m2.first();
                           var age = m2.content;
                         
                           message.channel.send(message.author.username + '`3`').then( (m) =>{
                             m.edit('**اللاعب الاول**' )
-                           
+                                  setTimeout(() => {
+                                    m.delete()
+                                  }, 10000);                           
                             m.channel.awaitMessages( m1 => m1.author == message.author,{ max: 1, time: 60*1000 } ).then ( (m3) => {
                                 m3 = m3.first();
                                 var ask = m3.content;
                                 m3.delete();
                                 message.channel.send( message.author.username + '`4`').then( (m) =>{
                                   m.edit('**اللاعب الثاني**' )
-                                 
+                                  setTimeout(() => {
+                                    m.delete()
+                                  }, 10000);                                 
                                   m.channel.awaitMessages( m1 => m1.author == message.author,{ max: 1, time: 60*1000 } ).then ( (m4) => {
                                       m4 = m4.first();
                                       var ask2 = m4.content;
@@ -54,7 +60,7 @@ client.on("message", message => {
                                             var ask3 = m5.content;
                                             m5.delete();
                       m.edit('** يتم إرسال البيانات**').then( (mtime)=>{
-                       
+                        setTimeout(() => {
                           let embed = new Discord.MessageEmbed()
                           .setAuthor(message.author.username, message.author.avatarURL) 
                           .setColor('GOLD')
@@ -71,7 +77,10 @@ client.on("message", message => {
                         channel.send(embed)
                      
                        
-
+                        }, 2500);
+                        setTimeout(() => {
+                          mtime.delete()
+                        }, 3000);
                  })
                 })
                 })
