@@ -120,22 +120,80 @@ client.on("message", message => {
   let acRoom = message.guild.channels.cache.find(ch => ch.id === '932431084132646942')
                           let embed = new Discord.MessageEmbed()
                           .setColor('GOLD')
-                        .setTitle(`Lobby 1`)
-                        .addField('\u200B', 'EMPTY')
+                         .setTitle(`Lobby 1`)
+                         .addField('\u200B', '1: ')
+                        .addField('> `1    :`', ` ** ${slot1} ** `)
+                        .addField('> `2    :`', ` ** ${slot2} ** `)
+                        .addField('> `3    :`', ` ** ${slot3} ** `)
+                        .addField('> `4    :`', ` ** ${slot4} ** `)
+                        .addField('> `5    :`', ` ** ${slot5} ** `)
+                        .addField('> `6    :`', ` ** ${slot6} ** `)
+                        .addField('> `7    :`', ` ** ${slot7} ** `)
+                        .addField('> `8    :`', ` ** ${slot8} ** `)
+                        .addField('> `9    :`', ` ** ${slot9} ** `)
+                        .addField('> `10   :`', ` ** ${slot10} ** `)
+                        .addField('> `11   :`', ` ** ${slot11} ** `)
+                        .addField('> `12   :`', ` ** ${slot12} ** `)
+                        .addField('> `13   :`', ` ** ${slot13} ** `)
+                        .addField('> `14   :`', ` ** ${slot14} ** `)
+                        .addField('> `15   :`', ` ** ${slot15} ** `)
+                        .addField('> `16   :`', ` ** ${slot16} ** `)
+                        .addField('> `17   :`', ` ** ${slot17} ** `)
+                        .addField('> `18   :`', ` ** ${slot18} ** `)
+
                           acRoom.send(embed)
       
-                                let embeed = new Discord.MessageEmbed()
-                          .setColor('GOLD')
-                        .setTitle(`Lobby 1`)
-                        .addField('\u200B', 'TEST')
-                          
-      
-                       if (message.content === "test2") {        
-                      acRoom.edit(embeed)
-                       }
- 
+     
  }
 });
+
+client.on('message', message => {
+  if (!message.content.startsWith(prefix)) return;
+  var args = message.content.split(' ').slice(1);
+  var argresult = args.join(' ');
+  if (message.author.id !== "623866539925307406") return;
+
+  
+  if (message.content.startsWith(prefix + 'setwatch')) {
+  client.user.setActivity(argresult, {type: 'WATCHING'})
+     console.log('test' + argresult);
+    message.channel.sendMessage(`Watch Now: **${argresult}`)
+} 
+
+ 
+  if (message.content.startsWith(prefix + 'setlis')) {
+  client.user.setActivity(argresult, {type: 'LISTENING'})
+     console.log('test' + argresult);
+    message.channel.sendMessage(`LISTENING Now: **${argresult}**`)
+} 
+
+
+if (message.content.startsWith(prefix + 'setname')) {
+  client.user.setUsername(argresult).then
+      message.channel.sendMessage(`Username Changed To **${argresult}**`)
+  return message.reply("You Can change the username 2 times per hour");
+} 
+
+if (message.content.startsWith(prefix + 'setavatar')) {
+  client.user.setAvatar(argresult);
+   message.channel.sendMessage(`Avatar Changed Successfully To **${argresult}**`);
+}
+
+if (message.content.startsWith(prefix + 'setstream')) {
+  client.user.setGame(argresult, "https://www.twitch.tv/peery13");
+     console.log('test' + argresult);
+    message.channel.sendMessage(`Streaming: **${argresult}**`)
+} 
+if (message.content.startsWith(prefix + 'setplay')) {
+  client.user.setGame(argresult);
+     console.log('test' + argresult);
+    message.channel.sendMessage(`Playing: **${argresult}**`)
+} 
+
+
+
+});
+
       
 
 client.login(process.env.X)
