@@ -122,77 +122,57 @@ client.on("message", message => {
                           .setColor('GOLD')
                          .setTitle(`Lobby 1`)
                          .addField('\u200B', '1: ')
-                        .addField('> `1    :`', ` ** ${slot1} ** `)
-                        .addField('> `2    :`', ` ** ${slot2} ** `)
-                        .addField('> `3    :`', ` ** ${slot3} ** `)
-                        .addField('> `4    :`', ` ** ${slot4} ** `)
-                        .addField('> `5    :`', ` ** ${slot5} ** `)
-                        .addField('> `6    :`', ` ** ${slot6} ** `)
-                        .addField('> `7    :`', ` ** ${slot7} ** `)
-                        .addField('> `8    :`', ` ** ${slot8} ** `)
-                        .addField('> `9    :`', ` ** ${slot9} ** `)
-                        .addField('> `10   :`', ` ** ${slot10} ** `)
-                        .addField('> `11   :`', ` ** ${slot11} ** `)
-                        .addField('> `12   :`', ` ** ${slot12} ** `)
-                        .addField('> `13   :`', ` ** ${slot13} ** `)
-                        .addField('> `14   :`', ` ** ${slot14} ** `)
-                        .addField('> `15   :`', ` ** ${slot15} ** `)
-                        .addField('> `16   :`', ` ** ${slot16} ** `)
-                        .addField('> `17   :`', ` ** ${slot17} ** `)
-                        .addField('> `18   :`', ` ** ${slot18} ** `)
+                        .addField('> `1    :`', ` ** 1** `)
+                        .addField('> `2    :`', ` ** 2 ** `)
+                        .addField('> `3    :`', ` ** 3 ** `)
+                        .addField('> `4    :`', ` ** 4 ** `)
+                        .addField('> `5    :`', ` ** 5 ** `)
+                        .addField('> `6    :`', ` ** 6 ** `)
+                        .addField('> `7    :`', ` ** 7 ** `)
+                        .addField('> `8    :`', ` ** 8 ** `)
+                        .addField('> `9    :`', ` ** 9 ** `)
+                        .addField('> `10   :`', ` ** 10 ** `)
+                        .addField('> `11   :`', ` ** 11 ** `)
+                        .addField('> `12   :`', ` ** 12 ** `)
+                        .addField('> `13   :`', ` ** 13 ** `)
+                        .addField('> `14   :`', ` ** 14 ** `)
+                        .addField('> `15   :`', ` ** 15 ** `)
+                        .addField('> `16   :`', ` ** 16 ** `)
+                        .addField('> `17   :`', ` ** 1 ** `)
+                        .addField('> `18   :`', ` ** test ** `)
 
                           acRoom.send(embed)
       
-     
+
+function editLb(theMessage, newUser, newTime) {
+    //get the embed you want to edit
+    let currentEmbed = theMessage.embeds[0];
+
+    //Check all existing fields for the same newUser, if the same newUser
+    //is found, replace that entire field with the name: "Placeholder"
+    //and the value: "999:99". This will also remove any existing duplicates.
+    acRoom.fields.forEach(field => {
+        if (field.name == newUser) {
+            field.name = `Placeholder`;
+            field.value = `999:99`;
+        }
+    })
+let newUser = "pot";
+    let newTime = "re";
+    //add the newUser and the newTime to a new field
+    acRoom.addField(`${newUser}`, `${newTime}`);
+
+    //sort all available fields effectively by seconds, by taking 
+    // (minutes*60) + (seconds)
+    acRoom.fields.sort((a, b) => Number((a.value.split(":")[0])*60 + (a.value.split(":")[1])) - Number((b.value.split(":")[0])*60 + (b.value.split(":")[1])));
+    
+    //If there are now 4 fields, remove the slowest(last) one.
+    if (acRoom.fields.length == 4) acRoom.fields.splice(3, 1);
+}
  }
 });
 
-client.on('message', message => {
-  if (!message.content.startsWith(prefix)) return;
-  var args = message.content.split(' ').slice(1);
-  var argresult = args.join(' ');
-  if (message.author.id !== "623866539925307406") return;
 
-  
-  if (message.content.startsWith(prefix + 'setwatch')) {
-  client.user.setActivity(argresult, {type: 'WATCHING'})
-     console.log('test' + argresult);
-    message.channel.sendMessage(`Watch Now: **${argresult}`)
-} 
-
- 
-  if (message.content.startsWith(prefix + 'setlis')) {
-  client.user.setActivity(argresult, {type: 'LISTENING'})
-     console.log('test' + argresult);
-    message.channel.sendMessage(`LISTENING Now: **${argresult}**`)
-} 
-
-
-if (message.content.startsWith(prefix + 'setname')) {
-  client.user.setUsername(argresult).then
-      message.channel.sendMessage(`Username Changed To **${argresult}**`)
-  return message.reply("You Can change the username 2 times per hour");
-} 
-
-if (message.content.startsWith(prefix + 'setavatar')) {
-  client.user.setAvatar(argresult);
-   message.channel.sendMessage(`Avatar Changed Successfully To **${argresult}**`);
-}
-
-if (message.content.startsWith(prefix + 'setstream')) {
-  client.user.setGame(argresult, "https://www.twitch.tv/peery13");
-     console.log('test' + argresult);
-    message.channel.sendMessage(`Streaming: **${argresult}**`)
-} 
-if (message.content.startsWith(prefix + 'setplay')) {
-  client.user.setGame(argresult);
-     console.log('test' + argresult);
-    message.channel.sendMessage(`Playing: **${argresult}**`)
-} 
-
-
-
-});
 
       
 
