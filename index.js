@@ -89,9 +89,10 @@ client.on("message", message => {
                         .addField('\u200B', '════════════════════════════════════════')
                         .addField('> `PLAYER 2:` ',` ** ${ask2} ** ` , true)
                         .addField('\u200B', '════════════════════════════════════════')
-                        .addField('> `PLAYER 3:`',` ** ${ask3} ** ` , true)
+                        .addField('> `PLAYER 3:`',` ** ${ask6} ** ` , true)
                         .addField('\u200B', '════════════════════════════════════════')
-                        .addField('> `SUB PLAYER:`',` ** ${ask6} ** ` , true)                          
+                        .addField('> `SUB PLAYER:`',` ** ${ask3} ** ` , true)     
+                        .addField('\u200B', '════════════════════════════════════════')                          
                         channel.send(embed)
                      
                        
