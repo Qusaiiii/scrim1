@@ -123,6 +123,10 @@ client.on("message", message => {
                         .setTitle(`Lobby 1`)
                         .addField('\u200B', 'EMPTY')
                           acRoom.send(embed)
+      
+                       if (message.content === "test2") {        
+                      acRoom.edit(embeed)
+                       }
  
  }
 });
