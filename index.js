@@ -27,6 +27,7 @@ client.on("message", message => {
                   m1.delete();
    message.channel.send("..اكتب المنشن و الاسم في ببجي")
                   m.edit(message.author.username + '`2`').then( (m) =>{
+                      
                       m.edit('**قائد الفريق؟**' )
                                    setTimeout(() => {
                                     m.delete()
@@ -44,6 +45,7 @@ client.on("message", message => {
                                 m3 = m3.first();
                                 var ask = m3.content;
                                 m3.delete();
+                                
                                 message.channel.send( message.author.username + '`4`').then( (m) =>{
                                   m.edit('**اللاعب الثاني**' )
                                   setTimeout(() => {
@@ -53,12 +55,26 @@ client.on("message", message => {
                                       m4 = m4.first();
                                       var ask2 = m4.content;
                                       m4.delete();
-                                      message.channel.send(  message.author.username + '``5``').then( (m) =>{
-                                        m.edit('**اللاعب الثالث**' )
+                                      
+                                  message.channel.send( message.author.username + '`5`').then( (m) =>{
+                                  m.edit('**اللاعب الثالث**' )
+                                  setTimeout(() => {
+                                    m.delete()
+                                  }, 10000);                                 
+                                  m.channel.awaitMessages( m1 => m1.author == message.author,{ max: 1, time: 60*1000 } ).then ( (m6) => {
+                                      m6 = m6.first();
+                                      var ask6 = m6.content;
+                                      m6.delete();
+                                      
+                                      
+                                      
+                                      message.channel.send(  message.author.username + '``6``').then( (m) =>{
+                                        m.edit('**اللاعب الاحتياطي (اختياري)**' )
                                         m.channel.awaitMessages( m1 => m1.author == message.author,{ max: 1, time: 60*1000 } ).then ( (m5) => {
                                             m5 = m5.first();
                                             var ask3 = m5.content;
                                             m5.delete();
+                                            
                       m.edit('** يتم إرسال البيانات**').then( (mtime)=>{
                         setTimeout(() => {
                           let embed = new Discord.MessageEmbed()
@@ -74,6 +90,8 @@ client.on("message", message => {
                         .addField('> `PLAYER 2:` ',` ** ${ask2} ** ` , true)
                         .addField('\u200B', '════════════════════════════════════════')
                         .addField('> `PLAYER 3:`',` ** ${ask3} ** ` , true)
+                        .addField('\u200B', '════════════════════════════════════════')
+                        .addField('> `SUB PLAYER:`',` ** ${ask6} ** ` , true)                          
                         channel.send(embed)
                      
                        
