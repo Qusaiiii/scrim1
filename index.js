@@ -111,8 +111,9 @@ client.on("message", message => {
               })
           })
         })
+            })
     }
-                                     }
+                                    
 }
         });
 
