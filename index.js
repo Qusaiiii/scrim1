@@ -75,8 +75,7 @@ client.on("message", message => {
                         .addField('\u200B', '════════════════════════════════════════')
                         .addField('> `PLAYER 3:`',` ** ${ask3} ** ` , true)
                         channel.send(embed)
-                        message.react("✅")
-                        message.react("❎")
+                     
                         }, 2500);
                         setTimeout(() => {
                           mtime.delete()
@@ -97,29 +96,6 @@ client.on("message", message => {
     }
 }
         });
-        client.on('message',async message => {
-          let mention = message.mentions.members.first();
-          if(message.content.startsWith(prefix+"قبول")) {// امر القبول
-          if(!message.channel.guild) return;
-          let acRoom = message.guild.channels.cache.find(ch => ch.id === '828306630424789042')// اي دي روم القبول
-          if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return;
-          if(!mention) return message.reply("الرجاء الإشارة");
-         
-          acRoom.send(`> أهلا بك تم قبولك ك إداري في الخادم \n ${mention} إداري مبتدئ - :partying_face: `)
-          }
-        });
-
-client.on('message',async message => {
-  let mention = message.mentions.members.first();
-  if(message.content.startsWith(prefix+"رفض")) {// امر الرفض
-  if(!message.channel.guild) return;
-  let acRoom = message.guild.channels.cache.find(ch => ch.id === '828306630424789042')// اي دي روم الرفض
-  if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return;
-  if(!mention) return message.reply("الرجاء الإشارة");
- 
-  acRoom.send(`> نعتذر منك لايمكننا قبولك في الوقت الحالي \n ${mention} - :pleading_face: `)
-  }
-});
-
+      
 
 client.login(process.env.X)
