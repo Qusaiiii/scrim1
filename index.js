@@ -20,40 +20,40 @@ client.on("message", message => {
             if(!channel) return message.reply("**لانشاء روم التقديمات !!setsubmissions من فضلك اكتب الامر**")
             if(channel) {
               message.channel.send(message.author.username + '`1`').then((m)=>{
-            m.edit(message.author.username + '**اسم الفريق؟**').then( (m) =>{
+            m.edit('**اسم الفريق؟**').then( (m) =>{
              m.channel.awaitMessages( m1 => m1.author == message.author,{ max: 1, time: 60*1000 } ).then ( (m1) => {
                   m1 = m1.first();
                   var name = m1.content;
                   m1.delete();
    message.channel.send("..اكتب المنشن و الاسم في ببجي")
                   m.edit(message.author.username + '`2`').then( (m) =>{
-                      m.edit( message.author.username + ', **قائد الفريق؟**' )
+                      m.edit('**قائد الفريق؟**' )
                     
                       m.channel.awaitMessages( m2 => m2.author == message.author,{ max: 1, time: 60*1000 } ).then ( (m2) => {
                           m2 = m2.first();
                           var age = m2.content;
                         
                           message.channel.send(message.author.username + '`3`').then( (m) =>{
-                            m.edit( message.author.username + '**اللاعب الاول**' )
+                            m.edit('**اللاعب الاول**' )
                            
                             m.channel.awaitMessages( m1 => m1.author == message.author,{ max: 1, time: 60*1000 } ).then ( (m3) => {
                                 m3 = m3.first();
                                 var ask = m3.content;
                                 m3.delete();
                                 message.channel.send( message.author.username + '`4`').then( (m) =>{
-                                  m.edit( message.author.username + '**اللاعب الثاني **' )
+                                  m.edit('**اللاعب الثاني**' )
                                  
                                   m.channel.awaitMessages( m1 => m1.author == message.author,{ max: 1, time: 60*1000 } ).then ( (m4) => {
                                       m4 = m4.first();
                                       var ask2 = m4.content;
                                       m4.delete();
                                       message.channel.send(  message.author.username + '``5``').then( (m) =>{
-                                        m.edit( message.author.username + '**اللاعب الثالث' )
+                                        m.edit('**اللاعب الثالث**' )
                                         m.channel.awaitMessages( m1 => m1.author == message.author,{ max: 1, time: 60*1000 } ).then ( (m5) => {
                                             m5 = m5.first();
                                             var ask3 = m5.content;
                                             m5.delete();
-                      m.edit( message.author.username + ', يتم إرسال البيانات').then( (mtime)=>{
+                      m.edit('** يتم إرسال البيانات**').then( (mtime)=>{
                         setTimeout(() => {
                           let embed = new Discord.MessageEmbed()
                           .setAuthor(message.author.username, message.author.avatarURL) 
