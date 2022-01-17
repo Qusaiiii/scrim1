@@ -101,20 +101,13 @@ client.on("message", message => {
 client.on("message", message => { 
   if(message.content.startsWith(prefix+"start")) {//  بدء التقديم
   
+  let acRoom = message.guild.channels.cache.find(ch => ch.id === '932431084132646942')
                           let embed = new Discord.MessageEmbed()
                           .setAuthor(message.author.username, message.author.avatarURL) 
                           .setColor('GOLD')
-                        .setTitle(`TEST`)
-                        .addField('> `TEAM    :`' , true)
-                        .addField('\u200B', '════════════════════════════════════════')
-                        .addField('> `CAPTIAN :`' , true)
-                        .addField('\u200B', '════════════════════════════════════════')
-                        .addField('> `PLAYER 1:`',  true)
-                        .addField('\u200B', '════════════════════════════════════════')
-                        .addField('> `PLAYER 2:` ', true)
-                        .addField('\u200B', '════════════════════════════════════════')
-                        .addField('> `PLAYER 3:`', true)
-                          message.channel.send(embed)
+                        .setTitle(`Lobby 1`)
+                        .addField('> `Empty`')
+                          acRoom.send(embed)
  
  }
 });
