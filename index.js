@@ -54,7 +54,7 @@ client.on("message", message => {
                                             var ask3 = m5.content;
                                             m5.delete();
                       m.edit('** يتم إرسال البيانات**').then( (mtime)=>{
-                        setTimeout(() => {
+                       
                           let embed = new Discord.MessageEmbed()
                           .setAuthor(message.author.username, message.author.avatarURL) 
                           .setColor('GOLD')
@@ -70,10 +70,7 @@ client.on("message", message => {
                         .addField('> `PLAYER 3:`',` ** ${ask3} ** ` , true)
                         channel.send(embed)
                      
-                        }, 2500);
-                        setTimeout(() => {
-                          mtime.delete()
-                        }, 3000);
+                       
 
                  })
                 })
