@@ -124,6 +124,12 @@ client.on("message", message => {
                         .addField('\u200B', 'EMPTY')
                           acRoom.send(embed)
       
+                                let embeed = new Discord.MessageEmbed()
+                          .setColor('GOLD')
+                        .setTitle(`Lobby 1`)
+                        .addField('\u200B', 'TEST')
+                          
+      
                        if (message.content === "test2") {        
                       acRoom.edit(embeed)
                        }
