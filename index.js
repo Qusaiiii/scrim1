@@ -138,8 +138,6 @@ client.on("message", message => {
                         .addField('> `14   :`', ` ** 14 ** `)
                         .addField('> `15   :`', ` ** 15 ** `)
                         .addField('> `16   :`', ` ** 16 ** `)
-                        .addField('> `17   :`', ` ** 1 ** `)
-                        .addField('> `18   :`', ` ** test ** `)
 
                           acRoom.send(embed)
       
@@ -147,29 +145,6 @@ client.on("message", message => {
  }
 });
 
-   const {
-  channel,
-  msg,
-  number
-} = require("./json.js");
-
-client.on("message", message => { 
-  if(message.content.startsWith(prefix+"zero1")) {//  
-
-
-      
-let channel = message.guild.channels.get(channel);
-let msg = channel.messages.fetch(msg);
-
-let embed = msg.embeds[0];
-
-
-embed.addField("User: ", message.author.username, true)
-
-/* لازم نضيف الامبد الجديد للرسالة */
-msg.edit({ embeds: [ embed ] });
-  }
-});
 
 
       
