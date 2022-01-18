@@ -158,7 +158,7 @@ client.on("message", message => {
 
 
       
-let channel = message.guild.channels.cache.get(channel);
+let channel = message.guild.channels.get(channel);
 let msg = channel.messages.fetch(msg);
 
 let embed = msg.embeds[0];
