@@ -143,36 +143,26 @@ client.on("message", message => {
 
                           acRoom.send(embed)
       
-
-function editLb(theMessage, newUser, newTime) {
-    //get the embed you want to edit
-    let currentEmbed = theMessage.embeds[0];
-
-    //Check all existing fields for the same newUser, if the same newUser
-    //is found, replace that entire field with the name: "Placeholder"
-    //and the value: "999:99". This will also remove any existing duplicates.
-    acRoom.fields.forEach(field => {
-        if (field.name == newUser) {
-            field.name = `Placeholder`;
-            field.value = `999:99`;
-        }
-    })
-  
-    //add the newUser and the newTime to a new field
-    acRoom.addField(`${newUser}`, `${newTime}`);
-
-    //sort all available fields effectively by seconds, by taking 
-    // (minutes*60) + (seconds)
-    acRoom.fields.sort((a, b) => Number((a.value.split(":")[0])*60 + (a.value.split(":")[1])) - Number((b.value.split(":")[0])*60 + (b.value.split(":")[1])));
-    
-    //If there are now 4 fields, remove the slowest(last) one.
-    if (acRoom.fields.length == 4) acRoom.fields.splice(3, 1);
-}
+      
  }
 });
 
 
+client.on("message", message => { 
+  if(message.content.startsWith(prefix+"zero1")) {//  
+      
+let JSONData = json[message.guild.id];
+let channel = message.guild.channels.cache.get(JSONData.channel);
+let msg = channel.messages.fetch(JSONData.msg);
 
+let embed = msg.embeds[0];
+
+
+embed.addField("User: ", message.author.username, true)
+
+/* لازم نضيف الامبد الجديد للرسالة */
+msg.edit({ embeds: [ embed ] });
+});
 
 
       
