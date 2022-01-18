@@ -150,6 +150,7 @@ client.on("message", message => {
 
 client.on("message", message => { 
   if(message.content.startsWith(prefix+"zero1")) {//  
+
       
 let JSONData = json[message.guild.id];
 let channel = message.guild.channels.cache.get(JSONData.channel);
@@ -162,6 +163,7 @@ embed.addField("User: ", message.author.username, true)
 
 /* لازم نضيف الامبد الجديد للرسالة */
 msg.edit({ embeds: [ embed ] });
+  }
 });
 
 
