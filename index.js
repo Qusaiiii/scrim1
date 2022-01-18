@@ -149,9 +149,9 @@ client.on("message", message => {
   if(message.content.startsWith(prefix+"zero")) {
       
 let json = require('./json.json')
-let JSONData = json[message.guild_id];
-let channel = message.guild.channels.cache.get(JSONData.channel);
-let msg = channel.messages.fetch(JSONData.msg);
+      
+let channel = message.guild.channels.cache.get(json.channel);
+let msg = channel.messages.fetch(json.msg);
 
 let embed = msg.embeds[0];
 /* هون بتعدل على الامبد متل مابدك */
