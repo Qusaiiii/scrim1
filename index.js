@@ -149,8 +149,7 @@ client.on("message", message => {
   if(message.content.startsWith(prefix+"zero")) {
       
 let json = require('./json.json')
-let channel = json.channel
-let JSONData = json[message.guild.id];
+let JSONData = json[message.guild_id];
 let channel = message.guild.channels.cache.get(JSONData.channel);
 let msg = channel.messages.fetch(JSONData.msg);
 
