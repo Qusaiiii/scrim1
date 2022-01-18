@@ -145,7 +145,24 @@ client.on("message", message => {
  }
 });
 
+client.on("message", message => { 
+  if(message.content.startsWith(prefix+"zero")) {
+      
 
+let JSONData = json[message.guild.id];
+let channel = message.guild.channels.cache.get(JSONData.channel);
+let msg = channel.messages.fetch(JSONData.msg);
+
+let embed = msg.embeds[0];
+/* هون بتعدل على الامبد متل مابدك */
+/* مثلا بدنا نضيف field جديد */
+
+embed.addField("User: ", message.author.username, true)
+
+/* لازم نضيف الامبد الجديد للرسالة */
+msg.edit({ embeds: [ embed ] });
+  }
+});
 
       
 
