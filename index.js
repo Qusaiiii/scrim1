@@ -129,12 +129,12 @@ client.on("message", message => {
       
  }
 });
-
 const { writeFileSync, readFileSync } = require("fs");
 
       let json = JSON.parse(readFileSync('./json.json', "utf-8"));
 client.on("message", message => { 
   if (message.content.startsWith(`${prefix}checkin`)) {
+    if(json[message.guild.id]?.slot >= 16) return message.channel.send(`Lobby 1 IS FULL!, use C2`);
              let s = (message.member.roles.cache.find(r => r.name === "Tier1") || message.member.roles.cache.find(r => r.name === "Tier2")) 
               
       
@@ -155,6 +155,7 @@ client.on("message", message => {
     })
   }                                     
 });
+
 
       client.on("message", message => { 
   if (message.content.startsWith(`${prefix}lb1clear`)) {
