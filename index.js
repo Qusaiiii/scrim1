@@ -153,6 +153,25 @@ client.on("message", message => {
   }                                     
 });
 
-      
+      client.on("message", message => { 
+  if (message.content.startsWith(`${prefix}lbclear`)) {
+      let msg = '933343245725999134';
+
+    
+    let channel = message.guild.channels.cache.get('932431084132646942');
+    channel.messages.fetch(msg).then(msg => {
+      let embed = msg.embeds[0];
+    
+            let ee = new Discord.MessageEmbed()
+                          .setColor('GOLD')
+                         .setTitle(`Lobby 1`)
+
+
+                         
+        msg.edit({ ee: [ embed ] });
+        
+    })
+  }                                     
+});
 
 client.login(process.env.X)
