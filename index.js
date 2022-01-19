@@ -135,17 +135,14 @@ client.on("message", message => {
               var args =  message.content.split(' ').slice(1).join(' ')//
               if (!args) return message.reply('منشن الفريق أولا')
       let msg = '933343245725999134';
-
-    
+      let t = message.guild.roles.find("name", "tier1") || message.guild.roles.find("name", "tier2") || message.guild.roles.find("name", "tier3") 
+    let tier = message.member.roles.has(t);
     let channel = message.guild.channels.cache.get('932431084132646942');
       let json = require('./json.json');
-     var num = '0';
-             var nums = num++;
       
-             let tier = 'tierTest';
     channel.messages.fetch(msg).then(msg => {
       let embed = msg.embeds[0];
-      embed.addField(`${nums}` , ` ${args} `)
+      embed.addField(`${tier}` , ` ${args} `)
         
          msg.edit(embed);
         
@@ -154,7 +151,7 @@ client.on("message", message => {
 });
 
       client.on("message", message => { 
-  if (message.content.startsWith(`${prefix}lbclear`)) {
+  if (message.content.startsWith(`${prefix}lb1clear`)) {
       let msg = '933343245725999134';
 
     
@@ -169,7 +166,7 @@ client.on("message", message => {
 
                          
         msg.edit(newE);
-        message.channel.send('Lobby Cleared!');
+        message.channel.send('**SUCESS, Lobby 1 Cleared!**');
         
     })
   }                                     
