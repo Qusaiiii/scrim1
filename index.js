@@ -140,7 +140,7 @@ client.on("message", message => {
               
              let one = (message.member.roles.cache.find(r => r.name === "Tier1"));
                         
-                        let two = (message.member.roles.cache.find(r => r.name === "Tier1"));
+                        let two = (message.member.roles.cache.find(r => r.name === "Tier2"));
              
       let msg = '933343245725999134';
       
@@ -156,7 +156,8 @@ client.on("message", message => {
            embed.addField(`> \`SLOT ${json[message.guild.id].slot}:\``, `${arg}` + `${s}`)
           json[message.guild.id].slot++;
           writeFileSync("./json.json", JSON.stringify(json, null, 2));
-                   embed.fields.sort((a, b) => b.two > a.one) 
+        
+                   embed.fields.sort((a, b) => two > one) 
          msg.edit(embed);      
 
         
