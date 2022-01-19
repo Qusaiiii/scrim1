@@ -136,9 +136,12 @@ client.on("message", message => {
                           let embed = new Discord.MessageEmbed()
                           .setColor('GOLD')
                          .setTitle(`Test`)
-                          .addField(`31`)                          
-                          .addField(`22`)                    
-                          .addField(`1`)
+                          .addField(`Tier5`)                          
+                          .addField(`Tier2`)                    
+                          .addField(`Tier6`)
+                          .addField(`Tier 5`)                          
+                          .addField(`Tier 2`)                    
+                          .addField(`Tier 6`)                         
                           aceRoom.send(embed)
       
       
@@ -192,8 +195,7 @@ client.on("message", message => {
 function editLb(theMessage, newUser, newTime) {
     
 
-
-    embed.fields.sort((a, b) => Number((a.value.split(":")[0])*60 + (a.value.split(":")[1])) - Number((b.value.split(":")[0])*60 + (b.value.split(":")[1])));
+currentEmbed.fields.sort((a, b) => Number(a.value.split("Tier")[1]) - Number(b.value.split("Tier")[1]));
 }
                          
         msg.edit(embed);        
