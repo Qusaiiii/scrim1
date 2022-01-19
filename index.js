@@ -169,6 +169,7 @@ client.on("message", message => {
 
                          
         msg.edit(newE);
+        message.channel.send('Lobby Cleared!');
         
     })
   }                                     
