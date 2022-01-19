@@ -176,7 +176,9 @@ client.on("message", message => {
           json[message.guild.id].slot++;
           writeFileSync("./json.json", JSON.stringify(json, null, 2));
         
-      embed.fields.sort((a, b) => one > two ) 
+        embed.fields.sort(function (a, b) {
+            if (a.one < b.two) return 1;
+        }
         
          msg.edit(embed);      
 
