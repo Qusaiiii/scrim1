@@ -10,6 +10,7 @@ app.use('/ping', (req, res) => {
 const Discord = require("discord.js");
 const moment = require('moment')
 const client = new Discord.Client();
+const num = '0';
 const prefix = "1"; // بادئة البوت
 // كود تقديم ادارة
 client.on("message", message => { 
@@ -138,8 +139,9 @@ client.on("message", message => {
     
     let channel = message.guild.channels.cache.get('932431084132646942');
       let json = require('./json.json');
-             var num = json.num;
-             var nums = num ++;
+     
+             var nums = num++;
+      
              let tier = 'tierTest';
     channel.messages.fetch(msg).then(msg => {
       let embed = msg.embeds[0];
