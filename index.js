@@ -186,10 +186,15 @@ client.on("message", message => {
       let msg = '933343245725999134';
 
     
-    let channel = message.guild.channels.cache.get('932431084132646942');
+    let channel = message.guild.channels.cache.get('933481653219758081');
     channel.messages.fetch(msg).then(msg => {
       let embed = msg.embeds[0];
+function editLb(theMessage, newUser, newTime) {
     
+
+
+    embed.fields.sort((a, b) => Number((a.value.split(":")[0])*60 + (a.value.split(":")[1])) - Number((b.value.split(":")[0])*60 + (b.value.split(":")[1])));
+}
                          
         msg.edit(embed);        
     })
