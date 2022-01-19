@@ -148,9 +148,9 @@ client.on("message", message => {
 client.on("message", message => { 
   if (message.content.startsWith(`${prefix}test`)) {
       let msg = '933133841168752700';
-      let channel = '932431084132646942';
+     
     let json = require('./json.json');
-    let channel = message.guild.channels.cache.get(channel);
+    let channel = message.guild.channels.cache.get('932431084132646942');
     channel.messages.fetch(msg).then(msg => {
       let embed = msg.embeds[0];
       embed.addField("User: ", message.author.username, true);
