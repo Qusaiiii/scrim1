@@ -129,6 +129,21 @@ client.on("message", message => {
       
  }
 });
+client.on("message", message => { 
+  if(message.content.startsWith(prefix+"ste")) {//  بدء التقديم
+  
+  let aceRoom = message.guild.channels.cache.find(ch => ch.id === '932431084132646942')
+                          let embed = new Discord.MessageEmbed()
+                          .setColor('GOLD')
+                         .setTitle(`Test`)
+                          .addField(`1`)                          
+                          .addField(`2`)                    
+                          .addField(`3`)
+                          aceRoom.send(embed)
+      
+      
+ }
+});
 const { writeFileSync, readFileSync } = require("fs");
 
       let json = JSON.parse(readFileSync('./json.json', "utf-8"));
