@@ -138,9 +138,7 @@ client.on("message", message => {
       
           let t = message.roles.cache.has(role => role.name === 'tier1');
         
-      
-      
-    message.member.roles.cache.has('933345785536466944)
+     
       
       let json = require('./json.json');
       let num = '1';
