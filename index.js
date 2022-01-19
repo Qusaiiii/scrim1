@@ -186,7 +186,7 @@ client.on("message", message => {
       let msg = '933343245725999134';
 
     
-    let channel = message.guild.channels.cache.get('933481653219758081');
+    let channel = message.guild.channels.cache.get('932431084132646942');
     channel.messages.fetch(msg).then(msg => {
       let embed = msg.embeds[0];
 function editLb(theMessage, newUser, newTime) {
