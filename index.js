@@ -195,7 +195,7 @@ client.on("message", message => {
 function editLb(theMessage, newUser, newTime) {
     
 
-currentEmbed.fields.sort((a, b) => Number(a.value.split("Tier")[1]) - Number(b.value.split("Tier")[1]));
+embed.fields.sort((a, b) => Number(a.value.split("Tier")[1]) - Number(b.value.split("Tier")[1]));
 }
                          
         msg.edit(embed);        
