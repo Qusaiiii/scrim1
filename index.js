@@ -130,14 +130,17 @@ client.on("message", message => {
 });
 
 client.on("message", message => { 
-  if (message.content.startsWith(`${prefix}test`)) {
+  if (message.content.startsWith(`${prefix}checkin`)) {
+              var args =  message.content.split(' ').slice(1).join(' ')//
+              if (!args) return message.reply('منشن الفريق أولا')
       let msg = '933343245725999134';
      
     let json = require('./json.json');
     let channel = message.guild.channels.cache.get('932431084132646942');
+             
     channel.messages.fetch(msg).then(msg => {
       let embed = msg.embeds[0];
-      embed.addField("User: ", message.author.username, true);
+      embed.addFieldld('> `1`', ` ${args} `)
         
          msg.edit(embed);
         
