@@ -123,21 +123,7 @@ client.on("message", message => {
                          .setTitle(`Lobby 1`)
                          .addField('\u200B', '1: ')
                         .addField('> `1    :`', ` ** 1** `)
-                        .addField('> `2    :`', ` ** 2 ** `)
-                        .addField('> `3    :`', ` ** 3 ** `)
-                        .addField('> `4    :`', ` ** 4 ** `)
-                        .addField('> `5    :`', ` ** 5 ** `)
-                        .addField('> `6    :`', ` ** 6 ** `)
-                        .addField('> `7    :`', ` ** 7 ** `)
-                        .addField('> `8    :`', ` ** 8 ** `)
-                        .addField('> `9    :`', ` ** 9 ** `)
-                        .addField('> `10   :`', ` ** 10 ** `)
-                        .addField('> `11   :`', ` ** 11 ** `)
-                        .addField('> `12   :`', ` ** 12 ** `)
-                        .addField('> `13   :`', ` ** 13 ** `)
-                        .addField('> `14   :`', ` ** 14 ** `)
-                        .addField('> `15   :`', ` ** 15 ** `)
-                        .addField('> `16   :`', ` ** 16 ** `)
+
 
                           acRoom.send(embed)
       
