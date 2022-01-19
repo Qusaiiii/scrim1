@@ -176,11 +176,12 @@ client.on("message", message => {
           json[message.guild.id].slot++;
           writeFileSync("./json.json", JSON.stringify(json, null, 2));
         
-                embed.fields.sort(function (a, b) => (String(a.name) + String(a.value)).length - (String(b.name) + String(b.value)).length);
+                embed.fields.sort(function (a, b) {
+                    (String(a.name) + String(a.value)).length - (String(b.name) + String(b.value)).length);
    
         
          msg.edit(embed);      
-                
+    })
         })
   }
 });
