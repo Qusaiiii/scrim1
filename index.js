@@ -130,6 +130,9 @@ client.on("message", message => {
  }
 });
 
+const { writeFileSync, readFileSync } = require("fs");
+
+      let json = JSON.parse(readFileSync('./json.json', "utf-8"));
 client.on("message", message => { 
   if (message.content.startsWith(`${prefix}checkin`)) {
              let s = (message.member.roles.cache.find(r => r.name === "Tier1") || message.member.roles.cache.find(r => r.name === "Tier2")) 
@@ -137,18 +140,16 @@ client.on("message", message => {
       
       let msg = '933343245725999134';
       
-        let num = 'num';
-     
       
-      let json = require('./json.json');
           let channel = message.guild.channels.cache.get('932431084132646942');
     channel.messages.fetch(msg).then(msg => {
       let embed = msg.embeds[0];
                       var arg =  message.content.split(' ').slice(1).join(' ')//
                                     if (!arg) return message.reply('منشن الفريق أولا')
-
-           embed.addField('> `SLOT 1:`', `${arg}` + `${s}`)
-        
+            if(!json[message.guild.id]) { json[ message.guild.id ] = { slot: 1 } }
+           embed.addField(`> \`SLOT ${json[message.guild.id].slot}:\``, `${arg}` + `${s}`)
+          json[message.guild.id].slot++;
+          writeFileSync("./json.json", JSON.stringify(json, null, 2));
          msg.edit(embed);
         
     })
