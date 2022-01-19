@@ -153,7 +153,7 @@ let json = require('./json.json')
 let channel = message.guild.channels.cache.get('932431084132646942');
 let msg = channel.messages.fetch('933133841168752700');
 
-let embed = msg.embeds;
+let embed = msg.embeds[0];
 /* هون بتعدل على الامبد متل مابدك */
 /* مثلا بدنا نضيف field جديد */
 
