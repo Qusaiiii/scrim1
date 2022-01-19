@@ -136,9 +136,9 @@ client.on("message", message => {
                           let embed = new Discord.MessageEmbed()
                           .setColor('GOLD')
                          .setTitle(`Test`)
-                          .addField(`1`)                          
-                          .addField(`2`)                    
-                          .addField(`3`)
+                          .addField(`31`)                          
+                          .addField(`22`)                    
+                          .addField(`1`)
                           aceRoom.send(embed)
       
       
