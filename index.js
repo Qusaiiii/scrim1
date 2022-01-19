@@ -135,8 +135,6 @@ client.on("message", message => {
              let s = (message.member.roles.cache.find(r => r.name === "tier1") || message.member.roles.cache.find(r => r.name === "tier2")) 
               
       
-              var args =  message.content.split(' ').slice(1).join(' ')//
-              if (!args) return message.reply('منشن الفريق أولا')
       let msg = '933343245725999134';
       
         let num = 'num';
@@ -146,7 +144,10 @@ client.on("message", message => {
           let channel = message.guild.channels.cache.get('932431084132646942');
     channel.messages.fetch(msg).then(msg => {
       let embed = msg.embeds[0];
-      embed.addField('> `SLOT 1:`', `${args}` ` ${s} ` , true)
+                      var arg =  message.content.split(' ').slice(1).join(' ')//
+                                    if (!arg) return message.reply('منشن الفريق أولا')
+
+      embed.addField('> `SLOT 1:`', `${arg}` , ` ${s} ` , true)
         
          msg.edit(embed);
         
