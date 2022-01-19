@@ -140,7 +140,7 @@ client.on("message", message => {
              
     channel.messages.fetch(msg).then(msg => {
       let embed = msg.embeds[0];
-      embed.addFieldld('> `1`', ` ${args} `)
+      embed.addField('> `1`', ` ${args} `)
         
          msg.edit(embed);
         
