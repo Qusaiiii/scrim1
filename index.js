@@ -143,7 +143,7 @@ client.on("message", message => {
              let tier = 'tierTest';
     channel.messages.fetch(msg).then(msg => {
       let embed = msg.embeds[0];
-      embed.addField('> `SLOT:`' `${num}` , ` ${args} ` ` ${tier} `)
+      embed.addFieldld(`${nums}` , ` ${args} `)
         
          msg.edit(embed);
         
