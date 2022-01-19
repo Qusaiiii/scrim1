@@ -138,8 +138,12 @@ client.on("message", message => {
     if(json[message.guild.id]?.slot >= 17) return message.channel.send(`**Lobby 1 IS FULL!, use 1checkin2`);
              let s = (message.member.roles.cache.find(r => r.name === "Tier1") || message.member.roles.cache.find(r => r.name === "Tier2")) 
               
-      
+             let one = (message.member.roles.cache.find(r => r.name === "Tier1"));
+                        
+                        let two = (message.member.roles.cache.find(r => r.name === "Tier1"));
+             
       let msg = '933343245725999134';
+      
       
       
           let channel = message.guild.channels.cache.get('932431084132646942');
@@ -148,9 +152,11 @@ client.on("message", message => {
                       var arg =  message.content.split(' ').slice(1).join(' ')//
                                     if (!arg) return message.reply('منشن الفريق أولا')
             if(!json[message.guild.id]) { json[ message.guild.id ] = { slot: 1 } }
+        
            embed.addField(`> \`SLOT ${json[message.guild.id].slot}:\``, `${arg}` + `${s}`)
           json[message.guild.id].slot++;
           writeFileSync("./json.json", JSON.stringify(json, null, 2));
+
          msg.edit(embed);
         
     })
@@ -165,7 +171,6 @@ client.on("message", message => {
     channel.messages.fetch(msg).then(msg => {
       let embed = msg.embeds[0];
     
- embed.fields.sort((a, b) => Number((a.value.split(":")[1]) + (a.value.split(":")[1])) - Number((b.value.split(":")[1]) + (b.value.split(":")[1])));
                          
         msg.edit(embed);        
     })
