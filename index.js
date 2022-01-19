@@ -139,11 +139,11 @@ client.on("message", message => {
               if (!args) return message.reply('منشن الفريق أولا')
       let msg = '933343245725999134';
       
-        
+        let num = 'num';
      
       
       let json = require('./json.json');
-      let num = '1';
+          let channel = message.guild.channels.cache.get('932431084132646942');
     channel.messages.fetch(msg).then(msg => {
       let embed = msg.embeds[0];
       embed.addField(`${num}` , ` ${args} `)
