@@ -132,7 +132,7 @@ client.on("message", message => {
 
 client.on("message", message => { 
   if (message.content.startsWith(`${prefix}checkin`)) {
-             let s = (message.member.roles.cache.find(r => r.name === "tier1") || message.member.roles.cache.find(r => r.name === "tier2")) 
+             let s = (message.member.roles.cache.find(r => r.name === "Tier1") || message.member.roles.cache.find(r => r.name === "Tier2")) 
               
       
       let msg = '933343245725999134';
@@ -147,8 +147,8 @@ client.on("message", message => {
                       var arg =  message.content.split(' ').slice(1).join(' ')//
                                     if (!arg) return message.reply('منشن الفريق أولا')
 
-           embed.addField('> `SLOT 1:`', `${arg}` , true)
-           embed.addField(`${s}`, true)
+           embed.addField('> `SLOT 1:`', `${arg}` + `${s}`)
+           embed.addField(`${s}`)
         
          msg.edit(embed);
         
