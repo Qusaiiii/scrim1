@@ -134,6 +134,7 @@ const { writeFileSync, readFileSync } = require("fs");
       let json = JSON.parse(readFileSync('./json.json', "utf-8"));
 client.on("message", message => { 
   if (message.content.startsWith(`${prefix}checkin`)) {
+      message.react('✅');
     if(json[message.guild.id]?.slot >= 17) return message.channel.send(`**Lobby 1 IS FULL!, use 1checkin2`);
              let s = (message.member.roles.cache.find(r => r.name === "Tier1") || message.member.roles.cache.find(r => r.name === "Tier2")) 
               
