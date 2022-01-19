@@ -148,6 +148,7 @@ client.on("message", message => {
       
           let channel = message.guild.channels.cache.get('932431084132646942');
     channel.messages.fetch(msg).then(msg => {
+
       let embed = msg.embeds[0];
                       var arg =  message.content.split(' ').slice(1).join(' ')//
                                     if (!arg) return message.reply('منشن الفريق أولا')
@@ -157,7 +158,8 @@ client.on("message", message => {
           json[message.guild.id].slot++;
           writeFileSync("./json.json", JSON.stringify(json, null, 2));
         
-                   embed.fields.sort((a, b) => two > one) 
+      embed.sort((a, b) => one > two ) 
+        
          msg.edit(embed);      
 
         
