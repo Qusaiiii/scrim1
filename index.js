@@ -140,7 +140,10 @@ client.on("message", message => {
     channel.messages.fetch(msg).then(msg => {
       let embed = msg.embeds[0];
       embed.addField("User: ", message.author.username, true);
-      msg.edit({ embeds: [embed] });
+        
+        return msg.edit({embeds: [embed]});
+        
+     
     });
   }
 });
