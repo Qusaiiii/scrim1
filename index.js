@@ -132,8 +132,8 @@ client.on("message", message => {
 
 client.on("message", message => { 
   if (message.content.startsWith(`${prefix}checkin`)) {
-             if (!message.member.roles.cache.find(r => r.name === "tier1") ||!message.member.roles.cache.find(r => r.name === "tier2")) 
-                 return message.channel.send('test');
+             let s = (message.member.roles.cache.find(r => r.name === "tier1") || message.member.roles.cache.find(r => r.name === "tier2")) 
+              
       
               var args =  message.content.split(' ').slice(1).join(' ')//
               if (!args) return message.reply('منشن الفريق أولا')
@@ -146,7 +146,7 @@ client.on("message", message => {
           let channel = message.guild.channels.cache.get('932431084132646942');
     channel.messages.fetch(msg).then(msg => {
       let embed = msg.embeds[0];
-      embed.addField(`${num}` , ` ${args} `)
+      embed.addField(`${num}` , ` ${s} `)
         
          msg.edit(embed);
         
