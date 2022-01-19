@@ -134,13 +134,16 @@ client.on("message", message => {
               var args =  message.content.split(' ').slice(1).join(' ')//
               if (!args) return message.reply('منشن الفريق أولا')
       let msg = '933343245725999134';
-     
-    let json = require('./json.json');
+     let tier = 
+    
     let channel = message.guild.channels.cache.get('932431084132646942');
-             
+      let json = require('./json.json');
+             var num = json.num;
+             var nums = num++;
+             let tier = 'test';
     channel.messages.fetch(msg).then(msg => {
       let embed = msg.embeds[0];
-      embed.addField('> `1`', ` ${args} `)
+      embed.addField('> `${num}`', ` ${args} ` , ` ${tier} `)
         
          msg.edit(embed);
         
