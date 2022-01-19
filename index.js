@@ -168,7 +168,7 @@ client.on("message", message => {
 
 
                          
-        msg.edit({ ee: [ embed ] });
+        msg.edit(embed);
         
     })
   }                                     
