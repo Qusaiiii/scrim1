@@ -146,21 +146,14 @@ client.on("message", message => {
 });
 
 client.on("message", message => { 
-  if(message.content.startsWith(prefix+"zero")) {
-      
-let json = require('./json.json')
-     
-let channel = message.guild.channels.cache.get('932431084132646942');
-let msg = channel.messages.fetch('933133841168752700');
-
-let embed = msg.embeds[0];
-/* هون بتعدل على الامبد متل مابدك */
-/* مثلا بدنا نضيف field جديد */
-
-embed.addField("User: ", message.author.username, true)
-
-/* لازم نضيف الامبد الجديد للرسالة */
-msg.edit({ embeds: [ embed ] });
+  if (message.content.startsWith(`${prefix}test`)) {
+    let json = require('./json.json');
+    let channel = message.guild.channels.cache.get(json.channel);
+    channel.messages.fetch(json.msg).then(msg => {
+      let embed = msg.embeds[0];
+      embed.addField("User: ", message.author.username, true);
+      msg.edit({ embeds: [embed] });
+    });
   }
 });
 
