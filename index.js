@@ -121,8 +121,6 @@ client.on("message", message => {
                           let embed = new Discord.MessageEmbed()
                           .setColor('GOLD')
                          .setTitle(`Lobby 1`)
-                         .addField('\u200B', '1: ')
-                        .addField('> `1    :`', ` ** 1** `)
 
 
                           acRoom.send(embed)
