@@ -148,7 +148,6 @@ client.on("message", message => {
                                     if (!arg) return message.reply('منشن الفريق أولا')
             if(!json[message.guild.id]) { json[ message.guild.id ] = { slot: 1 } }
            embed.addField(`> \`SLOT ${json[message.guild.id].slot}:\``, `${arg}` + `${s}`)
-           embed.fields.sort((a, b) => Number(a.value.split("Tier")[1]) - Number(b.value.split("Tier")[1]));
           json[message.guild.id].slot++;
           writeFileSync("./json.json", JSON.stringify(json, null, 2));
          msg.edit(embed);
@@ -156,10 +155,27 @@ client.on("message", message => {
     })
   }                                     
 });
+      client.on("message", message => { 
+  if (message.content.startsWith(`${prefix}sort`)) {
+      let msg = '933343245725999134';
+
+    
+    let channel = message.guild.channels.cache.get('932431084132646942');
+    channel.messages.fetch(msg).then(msg => {
+      let embed = msg.embeds[0];
+    
+                  embed.fields.sort((a, b) => Number(a.value.split("Tier")[1]) - Number(b.value.split("Tier")[1]));
+
+
+                         
+        msg.edit(embed);        
+    })
+  }                                     
+});
 
 
       client.on("message", message => { 
-  if (message.content.startsWith(`${prefix}lb1clear`)) {
+  if (message.content.startsWith(`${prefix}lbc`)) {
       let msg = '933343245725999134';
 
     
