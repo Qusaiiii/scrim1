@@ -193,12 +193,18 @@ client.on("message", message => {
     channel.messages.fetch(msg).then(msg => {
       let embed = msg.embeds[0];
 function editLb(theMessage, newUser, newTime) {
+    let one = 'Tier6';
+    let two = 'Tier2';
     
-
-embed.fields.sort((a, b) => Number(a.value.split("Tier")[1]) - Number(b.value.split("Tier")[1]));
-}
+embed.fields.sort(function (a, b) {
+            if (a.one < b.two) return -1;
+            else if (a.one > b.two) return 1;
+       
+            
+       
                          
-        msg.edit(embed);        
+        msg.edit(embed);     
+            }
     })
   }                                     
 });
