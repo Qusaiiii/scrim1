@@ -133,7 +133,7 @@ client.on("message", message => {
 
 client.on("message", message => { 
   if (message.content.startsWith(`${prefix}test`)) {
-      let msg = '933133841168752700';
+      let msg = '933328886354296852';
      
     let json = require('./json.json');
     let channel = message.guild.channels.cache.get('932431084132646942');
