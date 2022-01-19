@@ -182,7 +182,7 @@ embed.fields.sort(function (a, b) {
    
         
          msg.edit(embed);      
-}
+})
                   
         })
   }
