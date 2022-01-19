@@ -162,13 +162,13 @@ client.on("message", message => {
     channel.messages.fetch(msg).then(msg => {
       let embed = msg.embeds[0];
     
-            let ee = new Discord.MessageEmbed()
+            let newE = new Discord.MessageEmbed()
                           .setColor('GOLD')
                          .setTitle(`Lobby 1`)
 
 
                          
-        msg.edit(embed);
+        msg.edit(newE);
         
     })
   }                                     
