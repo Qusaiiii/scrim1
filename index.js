@@ -142,9 +142,11 @@ client.on("message", message => {
       embed.addField("User: ", message.author.username, true).then(msg => {
                                                                       msg.edit({embeds: [embed]});
         
-     
+      
     });
+        })
   }
+                                     
 });
 
       
