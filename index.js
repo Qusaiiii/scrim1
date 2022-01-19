@@ -141,7 +141,7 @@ client.on("message", message => {
       let embed = msg.embeds[0];
       embed.addField("User: ", message.author.username, true);
         
-         msg.edit({ embeds: [ embed ] });
+         msg.edit(embed);
         
     })
   }                                     
