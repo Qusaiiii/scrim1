@@ -178,11 +178,12 @@ client.on("message", message => {
         
         embed.fields.sort(function (a, b) {
             if (a.one < b.two) return 1;
-        }
+        
         
          msg.edit(embed);      
 
-        
+        })
+    }
     })
   }                                     
 });
