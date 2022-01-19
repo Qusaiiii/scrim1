@@ -140,7 +140,7 @@ client.on("message", message => {
       let json = require('./json.json');
              var num = json.num;
              var nums = num++;
-             let tier = 'test';
+             let tier = 'tierTest';
     channel.messages.fetch(msg).then(msg => {
       let embed = msg.embeds[0];
       embed.addField('> `SLOT:`' `${num}` , ` ${args} ` ` ${tier} `)
