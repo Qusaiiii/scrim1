@@ -139,14 +139,12 @@ client.on("message", message => {
     let channel = message.guild.channels.cache.get('932431084132646942');
     channel.messages.fetch(msg).then(msg => {
       let embed = msg.embeds[0];
-      embed.addField("User: ", message.author.username, true).then(msg => {
-                                                                      msg.edit({embeds: [embed]});
+      embed.addField("User: ", message.author.username, true);
         
-      
-    });
-        })
-  }
-                                     
+         msg.edit({ embeds: [ embed ] });
+        
+    })
+  }                                     
 });
 
       
