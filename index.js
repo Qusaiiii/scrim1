@@ -132,11 +132,13 @@ client.on("message", message => {
 
 client.on("message", message => { 
   if (message.content.startsWith(`${prefix}checkin`)) {
+             if (!message.member.roles.cache.find(r => r.name === "tier1") ||!message.member.roles.cache.find(r => r.name === "tier2")) 
+                 return message.channel.send('test');
+      
               var args =  message.content.split(' ').slice(1).join(' ')//
               if (!args) return message.reply('منشن الفريق أولا')
       let msg = '933343245725999134';
       
-          let t = message.roles.find(role => role.name === 'tier1');
         
      
       
