@@ -148,7 +148,7 @@ client.on("message", message => {
                                     if (!arg) return message.reply('منشن الفريق أولا')
             if(!json[message.guild.id]) { json[ message.guild.id ] = { slot: 1 } }
            embed.addField(`> \`SLOT ${json[message.guild.id].slot}:\``, `${arg}` + `${s}`)
-            embed.fields.sort((a, b) => Number(a.value.split(" tier")[1]) - Number(b.value.split(" tier")[1]));
+           embed.fields.sort((a, b) => Number(a.value.split("Tier")[1]) - Number(b.value.split("Tier")[1]));
           json[message.guild.id].slot++;
           writeFileSync("./json.json", JSON.stringify(json, null, 2));
          msg.edit(embed);
