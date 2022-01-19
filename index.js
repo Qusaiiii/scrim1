@@ -146,7 +146,7 @@ client.on("message", message => {
           let channel = message.guild.channels.cache.get('932431084132646942');
     channel.messages.fetch(msg).then(msg => {
       let embed = msg.embeds[0];
-      embed.addField(`${num}` , ` ${s} `)
+      embed.addField(`${args}` , ` ${s} `)
         
          msg.edit(embed);
         
@@ -170,7 +170,7 @@ client.on("message", message => {
 
                          
         msg.edit(newE);
-        message.channel.send('**SUCESS, Lobby 1 Cleared!**');
+        message.channel.send('**SUCCESS, Lobby 1 Cleared!**');
         
     })
   }                                     
