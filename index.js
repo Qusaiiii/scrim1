@@ -136,7 +136,8 @@ client.on("message", message => {
               if (!args) return message.reply('منشن الفريق أولا')
       let msg = '933343245725999134';
       
-          let t = message.roles.cache.has(role => role.name === 'tier1') retrun message.reply('TEST: true');
+          let t = message.roles.cache.has(role => role.name === 'tier1');
+          if(member.roles.cache.has(t) return message.reply("TEST: True!");
       
       
     message.member.roles.cache.has('933345785536466944)
