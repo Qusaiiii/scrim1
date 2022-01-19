@@ -136,14 +136,16 @@ client.on("message", message => {
               if (!args) return message.reply('منشن الفريق أولا')
       let msg = '933343245725999134';
       
-          let t = message.roles.cache.some(role => role.name === 'tier1');
-         let tier = message.member.roles.has(t);
-    let channel = message.guild.channels.cache.get('932431084132646942');
-      let json = require('./json.json');
+          let t = message.roles.cache.has(role => role.name === 'tier1') retrun message.reply('TEST: true');
       
+      
+    message.member.roles.cache.has('933345785536466944)
+      
+      let json = require('./json.json');
+      let num = '1';
     channel.messages.fetch(msg).then(msg => {
       let embed = msg.embeds[0];
-      embed.addField(`${tier}` , ` ${args} `)
+      embed.addField(`${num}` , ` ${args} `)
         
          msg.edit(embed);
         
