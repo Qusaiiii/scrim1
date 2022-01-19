@@ -134,7 +134,7 @@ client.on("message", message => {
               var args =  message.content.split(' ').slice(1).join(' ')//
               if (!args) return message.reply('منشن الفريق أولا')
       let msg = '933343245725999134';
-     let tier = 
+
     
     let channel = message.guild.channels.cache.get('932431084132646942');
       let json = require('./json.json');
