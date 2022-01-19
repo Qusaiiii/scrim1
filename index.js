@@ -148,7 +148,6 @@ client.on("message", message => {
                                     if (!arg) return message.reply('منشن الفريق أولا')
 
            embed.addField('> `SLOT 1:`', `${arg}` + `${s}`)
-           embed.addField(`${s}`)
         
          msg.edit(embed);
         
