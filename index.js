@@ -164,9 +164,7 @@ client.on("message", message => {
     channel.messages.fetch(msg).then(msg => {
       let embed = msg.embeds[0];
     
-                  embed.fields.sort((a, b) => Number(a.value.split("Tier")[1]) - Number(b.value.split("Tier")[1]));
-
-
+ embed.fields.sort((a, b) => Number((a.value.split(":")[1]) + (a.value.split(":")[1])) - Number((b.value.split(":")[1]) + (b.value.split(":")[1])));
                          
         msg.edit(embed);        
     })
