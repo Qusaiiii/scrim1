@@ -181,7 +181,7 @@ client.on("message", message => {
         
          msg.edit(embed);      
     })
-        })
+        }
   }
 });
       client.on("message", message => { 
