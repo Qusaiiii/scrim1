@@ -175,14 +175,11 @@ client.on("message", message => {
            embed.addField(`> \`SLOT ${json[message.guild.id].slot}:\``, `${arg}` + `${s}`)
           json[message.guild.id].slot++;
           writeFileSync("./json.json", JSON.stringify(json, null, 2));
-        
-                embed.fields.sort((a, b)  => (String(a.name) + String(a.value)).length - (String(b.name) + String(b.value)).length);
-   
+           
         
          msg.edit(embed);      
     })
-        }
-  })
+  }
 });
       client.on("message", message => { 
   if (message.content.startsWith(`${prefix}sort`)) {
