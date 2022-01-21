@@ -199,7 +199,7 @@ function editLb(theMessage, newUser, newTime) {
        
                          
         msg.edit(embed);     
-
+}
     })
   }                                     
 });
