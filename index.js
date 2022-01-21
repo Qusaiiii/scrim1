@@ -136,12 +136,16 @@ client.on("message", message => {
                           let embed = new Discord.MessageEmbed()
                           .setColor('GOLD')
                          .setTitle(`Test`)
-                          .addField(`Tier5`)                          
-                          .addField(`Tier2`)                    
-                          .addField(`Tier6`)
-                          .addField(`Tier 5`)                          
-                          .addField(`Tier 2`)                    
-                          .addField(`Tier 6`)                         
+                          .addField[
+                              
+                              
+             {
+                "name": "Type of code:",
+                "value": "Test",
+                "inline": true
+            }
+            ]                       
+                                   
                           aceRoom.send(embed)
       
       
@@ -193,6 +197,13 @@ client.on("message", message => {
 function editLb(theMessage, newUser, newTime) {
     let one = 'Tier1';
     let two = 'Tier2';
+    
+    const te = [
+  { title: 'Tier1', date: new Date('2019-06-28') },
+  { title: 'Shopping', date: new Date('2019-06-10') },
+  { title: 'Trekking', date: new Date('2019-06-22') }
+]
+
     
        embed.fields = embed.fields.sort((a, b) => {
             if (a.value > b.value) return 1;
