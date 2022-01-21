@@ -141,9 +141,9 @@ client.on("message", message => {
                                     let embed = new Discord.MessageEmbed()
       .setAuthor(`LD`, message.guild.iconURL({ dynamic: true }))
       .setColor(0x51267)
-      .addFields({ name: 'Is True', value: userNames, inline: true },
-        { name: 'Is True', value: levels, inline: true },
-        { name: 'Is True', value: xp, inline: true });
+      .addFields({ name: 'Is True', value: userNames, inline: false },
+        { name: 'Is True', value: levels, inline: false },
+        { name: 'Is True', value: xp, inline: false });
                           aceRoom.send(embed)
       
       
