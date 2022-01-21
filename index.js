@@ -194,9 +194,12 @@ function editLb(theMessage, newUser, newTime) {
     let one = 'Tier1';
     let two = 'Tier2';
     
-   embed.sort((a, b) => (String(a.value) + String(a.value)).length - (String(b.value) + String(b.value)).length);
+       embed.fields = embed.fields.sort((a, b) => {
+            if (a.name > b.name) return 1;
+            if (a.name < b.name) return -1;
 
-       
+            return 0;
+        });
                          
         msg.edit(embed);     
 }
