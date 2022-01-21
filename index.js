@@ -135,9 +135,9 @@ client.on("message", message => {
   let aceRoom = message.guild.channels.cache.find(ch => ch.id === '932431084132646942')
                       
                           const field = [{name: "Type of code:", value: "Test", inline : true}]
-                                     let userNames = 'Test';
-      let levels = 'testt';
-      let xp = 'test';
+                                     let userNames = 'tas1';
+      let levels = 'abc3';
+      let xp = 'vasd2';
                                     let embed = new Discord.MessageEmbed()
       .setAuthor(`LD`, message.guild.iconURL({ dynamic: true }))
       .setColor(0x51267)
@@ -186,7 +186,7 @@ client.on("message", message => {
 });
       client.on("message", message => { 
   if (message.content.startsWith(`${prefix}sort`)) {
-      let msg = '933343245725999134';
+      let msg = '934042276970266624';
 
     
     let channel = message.guild.channels.cache.get('932431084132646942');
@@ -196,11 +196,7 @@ function editLb(theMessage, newUser, newTime) {
     let one = 'Tier1';
     let two = 'Tier2';
     
-    const te = [
-  { title: 'Tier1', date: new Date('2019-06-28') },
-  { title: 'Shopping', date: new Date('2019-06-10') },
-  { title: 'Trekking', date: new Date('2019-06-22') }
-]
+
 
     
        embed.fields = embed.fields.sort((a, b) => {
