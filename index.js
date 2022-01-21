@@ -136,15 +136,9 @@ client.on("message", message => {
                           let embed = new Discord.MessageEmbed()
                           .setColor('GOLD')
                          .setTitle(`Test`)
-                          .addField[
-                              
-                              
-             {
-                "name": "Type of code:",
-                "value": "Test",
-                "inline": true
-            }
-            ]                       
+                          .addField[{name: "Type of code:", value: "Test", inline : true}]
+                                     
+                                            
                                    
                           aceRoom.send(embed)
       
