@@ -175,20 +175,8 @@ client.on("message", message => {
            embed.addField(`> \`SLOT ${json[message.guild.id].slot}:\``, `${arg}` + `${s}`)
           json[message.guild.id].slot++;
           writeFileSync("./json.json", JSON.stringify(json, null, 2));
-        let name = ['Tier1' , 'Tier2'];
-           const descPos = (a, b) => {
-               
-  if (a.name !== b.name) {
-    return -1;
-  } else return a.position - b.position;
-};
 
-        const descPos = (a, b) => {
-  if (a.type !== b.type) {
-    if (a.type === 'voice') return 1;
-    else return -1;
-  } else return a.position - b.position;
-};
+
 
          msg.edit(embed);      
     })
@@ -203,7 +191,7 @@ client.on("message", message => {
     channel.messages.fetch(msg).then(msg => {
       let embed = msg.embeds[0];
 function editLb(theMessage, newUser, newTime) {
-    let one = 'Tier6';
+    let one = 'Tier1';
     let two = 'Tier2';
     
 embed.fields.sort(function (a, b) {
