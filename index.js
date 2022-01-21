@@ -175,8 +175,21 @@ client.on("message", message => {
            embed.addField(`> \`SLOT ${json[message.guild.id].slot}:\``, `${arg}` + `${s}`)
           json[message.guild.id].slot++;
           writeFileSync("./json.json", JSON.stringify(json, null, 2));
-           
-        
+        let name = ['Tier1' , 'Tier2'];
+           const descPos = (a, b) => {
+               
+  if (a.name !== b.name) {
+    return -1;
+  } else return a.position - b.position;
+};
+
+        const descPos = (a, b) => {
+  if (a.type !== b.type) {
+    if (a.type === 'voice') return 1;
+    else return -1;
+  } else return a.position - b.position;
+};
+
          msg.edit(embed);      
     })
   }
