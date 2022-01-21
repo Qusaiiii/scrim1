@@ -186,7 +186,7 @@ client.on("message", message => {
 });
       client.on("message", message => { 
   if (message.content.startsWith(`${prefix}sort`)) {
-      let msg = '934042276970266624';
+      let msg = '934044301627887638';
 
     
     let channel = message.guild.channels.cache.get('932431084132646942');
