@@ -194,11 +194,16 @@ function editLb(theMessage, newUser, newTime) {
     let one = 'Tier1';
     let two = 'Tier2';
     
-embed.fields.sort(function (a, b) {
             if (a.one < b.two) return -1;
             else if (a.one > b.two) return 1;
        
             
+          embed.fields.sort(function (a, b) {
+  if (a.one !== b.two) {
+    if (a.one === 'Tier1') return 1;
+    else return -1;
+  } else return a.position - b.position;
+};  
        
                          
         msg.edit(embed);     
