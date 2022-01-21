@@ -133,13 +133,13 @@ client.on("message", message => {
   if(message.content.startsWith(prefix+"ste")) {//  بدء التقديم
   
   let aceRoom = message.guild.channels.cache.find(ch => ch.id === '932431084132646942')
-                          let embed = new Discord.MessageEmbed()
-                          .setColor('GOLD')
-                         .setTitle(`Test`)
-                          .addField[{name: "Type of code:", value: "Test", inline : true}]
+                      
+                          const field = [{name: "Type of code:", value: "Test", inline : true}]
                                      
-                                            
-                                   
+                                    let embed = new Discord.MessageEmbed()
+                          .setColor('GOLD')
+                         .setTitle(`Test`)    
+                          .addField(field)          
                           aceRoom.send(embed)
       
       
