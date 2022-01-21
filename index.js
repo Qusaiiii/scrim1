@@ -135,11 +135,15 @@ client.on("message", message => {
   let aceRoom = message.guild.channels.cache.find(ch => ch.id === '932431084132646942')
                       
                           const field = [{name: "Type of code:", value: "Test", inline : true}]
-                                     
+                                     let userNames = 'Test';
+      let levels = 'testt';
+      let xp = 'test';
                                     let embed = new Discord.MessageEmbed()
-                          .setColor('GOLD')
-                         .setTitle(`Test`)    
-                          .addField(field)          
+      .setAuthor(`LD`, message.guild.iconURL({ dynamic: true }))
+      .setColor(0x51267)
+      .addFields({ name: 'Is True', value: userNames, inline: true },
+        { name: 'Is True', value: levels, inline: true },
+        { name: 'Is True', value: xp, inline: true });
                           aceRoom.send(embed)
       
       
