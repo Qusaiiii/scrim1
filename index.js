@@ -217,7 +217,13 @@ client.on("message", message => {
 
                          
         msg.edit(newE);
-        message.channel.send('**SUCCESS, Lobby 1 Cleared!**');
+                                                         let success = new Discord.MessageEmbed()
+      .setAuthor(`SUCCESS`, message.guild.iconURL({ dynamic: true }))
+      .setColor('GREEN')
+      .setDescription('**LOBBY 1 CLEARED!**');                                        
+
+        
+        message.channel.send(success);
         
     })
   }                                     
