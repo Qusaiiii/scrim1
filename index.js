@@ -154,7 +154,7 @@ const { writeFileSync, readFileSync } = require("fs");
       let json = JSON.parse(readFileSync('./json.json', "utf-8"));
 client.on("message", message => { 
   if (message.content.startsWith(`${prefix}checkin`)) {
-      message.react('✅');
+     
     if(json[message.guild.id]?.slot >= 17) return message.channel.send(`**Lobby 1 IS FULL!, use 1checkin2`);
              let s = (message.member.roles.cache.find(r => r.name === "Tier1") || message.member.roles.cache.find(r => r.name === "Tier2")) 
               if (!s) return message.channel.send('**You cannot use that (NO TIER)**');
@@ -172,6 +172,8 @@ client.on("message", message => {
       let embed = msg.embeds[0];
                       var arg =  message.content.split(' ').slice(1).join(' ')//
                                     if (!arg) return message.reply('منشن الفريق أولا')
+          message.react('✅');
+        
             if(!json[message.guild.id]) { json[ message.guild.id ] = { slot: 1 } }
         
            embed.addField(`> \`SLOT ${json[message.guild.id].slot}:\``, `${arg}` + `${s}`)
