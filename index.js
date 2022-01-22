@@ -181,7 +181,7 @@ client.on("message", message => {
       if (!arg) return message.reply(error2)
       message.react('✅');
         if(!json[message.guild.id]) { json[ message.guild.id ] = { slot: 1 } }
-         embed.addField({ name: ' `> \`SLOT ${json[message.guild.id].slot}:\``', value: arg + s, inline: false })
+         embed.addField({ name: `> \`SLOT ${json[message.guild.id].slot}:\``, value: `${arg}` + `${s}`, inline: false })
           json[message.guild.id].slot++;
           writeFileSync("./json.json", JSON.stringify(json, null, 2));
                 // ADD
