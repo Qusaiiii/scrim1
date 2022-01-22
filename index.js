@@ -147,11 +147,12 @@ client.on("message", message => {
      
     if(json[message.guild.id]?.slot >= 17) return message.channel.send(`**Lobby 1 IS FULL!, use 1checkin2`);
              let s = (message.member.roles.cache.find(r => r.name === "Tier1") || message.member.roles.cache.find(r => r.name === "Tier2")) 
+             
                                                 let error = new Discord.MessageEmbed()
       .setAuthor(`FAILED`, message.guild.iconURL({ dynamic: true }))
       .setColor(0x51267)
-      .addField('**REASON**: YOU DONT HAVE TIER');
-                       
+      .setDescription('**REASON**: YOU DONT HAVE TIER');
+  }                
      
               if (!s) return message.channel.send(error);
       
