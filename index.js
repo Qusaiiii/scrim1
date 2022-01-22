@@ -152,7 +152,7 @@ client.on("message", message => {
       .setAuthor(`FAILED`, message.guild.iconURL({ dynamic: true }))
       .setColor(0x51267)
       .setDescription('**REASON**: YOU DONT HAVE TIER');
-  }                
+  })               
      
               if (!s) return message.channel.send(error);
       
