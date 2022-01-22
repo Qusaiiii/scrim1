@@ -134,22 +134,29 @@ client.on("message", message => {
   
   let aceRoom = message.guild.channels.cache.find(ch => ch.id === '932431084132646942')
                       
-                          const field = [{name: "Type of code:", value: "Test", inline : true}]
-                                     let userNames = 'c';
-      let levels = 'a';
-      let xp = 'b';
-                                    let embed = new Discord.MessageEmbed()
-      .setAuthor(`LD`, message.guild.iconURL({ dynamic: true }))
-      .setColor(0x51267)
-      .addFields({ name: 'a', value: userNames, inline: false },
-        { name: 'c', value: levels, inline: false },
-        { name: 'b', value: xp, inline: false });
-      
+  func: (cmd, args, msgObj, speaker, channel, guild) => {
+        const createdStr = Util.getDateString(guild.createdAt);
 
-      embed.fields.sort(function(a, b) {
-    return a === b ? 0 : a < b ? -1 : 1;
-  });
-                          aceRoom.send(embed)
+        const sendEmbedFields = [];
+
+        sendEmbedFields.push({ name: 'ID', value: guild.id });
+        sendEmbedFields.push({ name: 'Name', value: guild.name });
+        sendEmbedFields.push({ name: 'Owner', value: guild.owner.toString() });
+        sendEmbedFields.push({ name: 'Region', value: Util.capitalize(guild.region) });
+        sendEmbedFields.push({ name: 'Members', value: guild.memberCount });
+        sendEmbedFields.push({ name: 'Text Channels', value: Util.getTextChannels(guild).size });
+        sendEmbedFields.push({ name: 'Voice Channels', value: Util.getVoiceChannels(guild).size });
+        sendEmbedFields.push({ name: 'Roles', value: guild.roles.size });
+        sendEmbedFields.push({ name: 'Default Channel', value: Util.capitalize(guild.defaultChannel.name) });
+        sendEmbedFields.push({ name: 'AFK Timeout', value: `${guild.afkTimeout} seconds` });
+        sendEmbedFields.push({ name: 'Created', value: createdStr });
+        sendEmbedFields.push({ name: 'Icon', value: guild.iconURL('png') });
+
+        sendEmbedFields.sort((a, b) => (String(a.name) + String(a.value)).length - (String(b.name) + String(b.value)).length);
+
+        Util.sendEmbed(channel, 'Guild Info', null, Util.makeEmbedFooter(speaker), guild.iconURL, colGreen, sendEmbedFields);
+    },
+});                    
       
       
  }
