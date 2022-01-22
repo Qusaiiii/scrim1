@@ -135,15 +135,22 @@ client.on("message", message => {
   let aceRoom = message.guild.channels.cache.find(ch => ch.id === '932431084132646942')
                       
                           const field = [{name: "Type of code:", value: "Test", inline : true}]
-                                     let userNames = 'tas1';
-      let levels = 'abc3';
-      let xp = 'vasd2';
+                                     let userNames = 'c';
+      let levels = 'a';
+      let xp = 'b';
                                     let embed = new Discord.MessageEmbed()
       .setAuthor(`LD`, message.guild.iconURL({ dynamic: true }))
       .setColor(0x51267)
-      .addFields({ name: 'Is True', value: userNames, inline: false },
-        { name: 'Is True', value: levels, inline: false },
-        { name: 'Is True', value: xp, inline: false });
+      .addFields({ name: 'a', value: userNames, inline: false },
+        { name: 'c', value: levels, inline: false },
+        { name: 'b', value: xp, inline: false });
+      
+        embed.sort(function(a, b) {
+    return a === b ? 0 : a < b ? -1 : 1;
+  });
+      embed.fields.sort(function(a, b) {
+    return a === b ? 0 : a < b ? -1 : 1;
+  });
                           aceRoom.send(embed)
       
       
@@ -181,7 +188,7 @@ client.on("message", message => {
       if (!arg) return message.reply(error2)
       message.react('✅');
         if(!json[message.guild.id]) { json[ message.guild.id ] = { slot: 1 } }
-         embed.addField({ name: `> \`SLOT ${json[message.guild.id].slot}:\``, value: `${arg}` + `${s}`, inline: false })
+           embed.addField(`> \`SLOT ${json[message.guild.id].slot}:\``, `${arg}` + `${s}`)
           json[message.guild.id].slot++;
           writeFileSync("./json.json", JSON.stringify(json, null, 2));
                 // ADD
