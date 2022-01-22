@@ -155,48 +155,37 @@ const { writeFileSync, readFileSync } = require("fs");
       let json = JSON.parse(readFileSync('./json.json', "utf-8"));
 client.on("message", message => { 
   if (message.content.startsWith(`${prefix}checkin`)) {
+                 let error3 = new Discord.MessageEmbed()
+      .setAuthor(`FAILED`, message.guild.iconURL({ dynamic: true }))
+      .setColor('RED')
+      .setDescription('**REASON**: Lobby 1 Is FULL');
      
-    if(json[message.guild.id]?.slot >= 17) return message.channel.send(`**Lobby 1 IS FULL!, use 1checkin2`);
+    if(json[message.guild.id]?.slot >= 17) return message.channel.send(error3);
              let s = (message.member.roles.cache.find(r => r.name === "Tier1") || message.member.roles.cache.find(r => r.name === "Tier2")) 
-                                                 let error = new Discord.MessageEmbed()
+             let error = new Discord.MessageEmbed()
       .setAuthor(`FAILED`, message.guild.iconURL({ dynamic: true }))
       .setColor('RED')
       .setDescription('**REASON**: You Don`t Have Tier');
+         if (!s) return message.channel.send(error);
       
-            
-     
-              if (!s) return message.channel.send(error);
-      
-             let one = (message.member.roles.cache.find(r => r.name === "Tier1"));
-                        
-                        let two = (message.member.roles.cache.find(r => r.name === "Tier2"));
-             
       let msg = '933343245725999134';
-      
-      
-      
           let channel = message.guild.channels.cache.get('932431084132646942');
     channel.messages.fetch(msg).then(msg => {
-                                                 let error2 = new Discord.MessageEmbed()
+        let error2 = new Discord.MessageEmbed()
       .setAuthor(`FAILED`, message.guild.iconURL({ dynamic: true }))
       .setColor('RED')
       .setDescription('**USAGE**: 1checkin @YOUR TEAM');                                        
-
-        
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       let embed = msg.embeds[0];
-                      var arg =  message.content.split(' ').slice(1).join(' ')//
-                                    if (!arg) return message.reply(error2)
-          message.react('✅');
-        
-            if(!json[message.guild.id]) { json[ message.guild.id ] = { slot: 1 } }
-        
-           embed.addField(`> \`SLOT ${json[message.guild.id].slot}:\``, `${arg}` + `${s}`)
+      var arg =  message.content.split(' ').slice(1).join(' ')//
+      if (!arg) return message.reply(error2)
+      message.react('✅');
+        if(!json[message.guild.id]) { json[ message.guild.id ] = { slot: 1 } }
+         embed.addField({ name: ' `> \`SLOT ${json[message.guild.id].slot}:\``', value: arg + s, inline: false })
           json[message.guild.id].slot++;
           writeFileSync("./json.json", JSON.stringify(json, null, 2));
-
-
-
-         msg.edit(embed);      
+                // ADD
+            msg.edit(embed);      
     })
   }
 });
