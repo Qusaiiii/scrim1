@@ -177,10 +177,16 @@ client.on("message", message => {
       
           let channel = message.guild.channels.cache.get('932431084132646942');
     channel.messages.fetch(msg).then(msg => {
+                                                 let error2 = new Discord.MessageEmbed()
+      .setAuthor(`FAILED`, message.guild.iconURL({ dynamic: true }))
+      .setColor('RED')
+      .addField('**USAGE**: 1checkin @YOUR TEAM') 
+      .setDescription('**EXAMPLE**: 1checkin <&709479226193215523>');                                        
 
+        
       let embed = msg.embeds[0];
                       var arg =  message.content.split(' ').slice(1).join(' ')//
-                                    if (!arg) return message.reply('منشن الفريق أولا')
+                                    if (!arg) return message.reply(error2)
           message.react('✅');
         
             if(!json[message.guild.id]) { json[ message.guild.id ] = { slot: 1 } }
