@@ -138,17 +138,7 @@ client.on("message", message => {
                                      let userNames = 'tas1';
       let levels = 'abc3';
       let xp = 'vasd2';
-                                    let embed = new Discord.MessageEmbed()
-      .setAuthor(`LD`, message.guild.iconURL({ dynamic: true }))
-      .setColor(0x51267)
-      .addFields({ name: 'Is True', value: userNames, inline: false },
-        { name: 'Is True', value: levels, inline: false },
-        { name: 'Is True', value: xp, inline: false });
-                          aceRoom.send(embed)
-      
-      
- }
-});
+ 
 const { writeFileSync, readFileSync } = require("fs");
 
       let json = JSON.parse(readFileSync('./json.json', "utf-8"));
@@ -157,7 +147,14 @@ client.on("message", message => {
      
     if(json[message.guild.id]?.slot >= 17) return message.channel.send(`**Lobby 1 IS FULL!, use 1checkin2`);
              let s = (message.member.roles.cache.find(r => r.name === "Tier1") || message.member.roles.cache.find(r => r.name === "Tier2")) 
-              if (!s) return message.channel.send('**You cannot use that (NO TIER)**');
+                                                let error = new Discord.MessageEmbed()
+      .setAuthor(`FAILED`, message.guild.iconURL({ dynamic: true }))
+      .setColor(0x51267)
+      .addField('**REASON**: YOU DONT HAVE TIER');
+                       
+     
+              if (!s) return message.channel.send(error);
+      
              let one = (message.member.roles.cache.find(r => r.name === "Tier1"));
                         
                         let two = (message.member.roles.cache.find(r => r.name === "Tier2"));
