@@ -145,9 +145,7 @@ client.on("message", message => {
         { name: 'c', value: levels, inline: false },
         { name: 'b', value: xp, inline: false });
       
-        embed.sort(function(a, b) {
-    return a === b ? 0 : a < b ? -1 : 1;
-  });
+
       embed.fields.sort(function(a, b) {
     return a === b ? 0 : a < b ? -1 : 1;
   });
