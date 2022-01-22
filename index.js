@@ -156,11 +156,31 @@ client.on("message", message => {
 
         Util.sendEmbed(channel, 'Guild Info', null, Util.makeEmbedFooter(speaker), guild.iconURL, colGreen, sendEmbedFields);
     },
-});                    
+});         
+    
+  client.on("message", message => { 
+  if(message.content.startsWith(prefix+"ste")) {//  بدء التقديم
+  
+  let aceRoom = message.guild.channels.cache.find(ch => ch.id === '932431084132646942')
+                      
+                          const field = [{name: "Type of code:", value: "Test", inline : true}]
+                                     let userNames = 'c';
+      let levels = 'a';
+      let xp = 'b';
+      const ff = [];
+           ff.push({ name: 'a', value: userNames, inline: false });
+        ff.push({ name: 'c', value: levels, inline: false });
+        ff.push({ name: 'b', value: xp, inline: false });
       
+      let embed = new Discord.MessageEmbed()
+      .setAuthor(`LD`, message.guild.iconURL({ dynamic: true }))
+      .setColor(0x51267)
+       .addFields(ff)
       
- }
-});
+ 
+      embed.fields.sort(function(a, b) {
+    return a.name === b.name ? 0 : a.name < b.name ? -1 : 1;
+  });    
 
 const { writeFileSync, readFileSync } = require("fs");
 
