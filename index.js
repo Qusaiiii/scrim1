@@ -180,7 +180,6 @@ client.on("message", message => {
                                                  let error2 = new Discord.MessageEmbed()
       .setAuthor(`FAILED`, message.guild.iconURL({ dynamic: true }))
       .setColor('RED')
-      .addField('**EXAMPLE**: 1checkin <@&709479226193215523>')     
       .setDescription('**USAGE**: 1checkin @YOUR TEAM');                                        
 
         
