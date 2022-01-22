@@ -180,35 +180,7 @@ client.on("message", message => {
     })
   }
 });
-      client.on("message", message => { 
-  if (message.content.startsWith(`${prefix}sort`)) {
-      let msg = '934044301627887638';
-
-    
-    let channel = message.guild.channels.cache.get('932431084132646942');
-    channel.messages.fetch(msg).then(msg => {
-      let embed = msg.embeds[0];
-function editLb(theMessage, newUser, newTime) {
-    let one = 'Tier1';
-    let two = 'Tier2';
-    
-
-
-    
-       embed.fields = embed.fields.sort((a, b) => {
-            if (a.value > b.value) return 1;
-            if (a.value < b.value) return -1;
-
-           
-        });
-                         
-        msg.edit(embed);     
-}
-    })
-  }                                     
-});
-
-
+ 
       client.on("message", message => { 
   if (message.content.startsWith(`${prefix}lbc`)) {
       let msg = '933343245725999134';
