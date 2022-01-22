@@ -157,7 +157,7 @@ client.on("message", message => {
       message.react('✅');
     if(json[message.guild.id]?.slot >= 17) return message.channel.send(`**Lobby 1 IS FULL!, use 1checkin2`);
              let s = (message.member.roles.cache.find(r => r.name === "Tier1") || message.member.roles.cache.find(r => r.name === "Tier2")) 
-              
+              if (!s) return message.channel.send('**You cannot use that (NO TIER)**');
              let one = (message.member.roles.cache.find(r => r.name === "Tier1"));
                         
                         let two = (message.member.roles.cache.find(r => r.name === "Tier2"));
