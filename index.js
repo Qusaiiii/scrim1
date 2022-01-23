@@ -159,6 +159,7 @@ client.on("message", message => {
       .setDescription('**USAGE**: 1checkin @YOUR TEAM');                                        
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       let embed = msg.embeds[0];
+console.log(msg.embeds[0]);
         var masg = message.content.toLowerCase();
      var arg =  message.content.split(' ').slice(1).join(' ')//   
       if (!arg) return message.reply(error2)
