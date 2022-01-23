@@ -160,13 +160,11 @@ client.on("message", message => {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       let embed = msg.embeds[0];
         var masg = message.content.toLowerCase();
-        var role = masg.split(' ').slice(2).join(" ").toLowerCase();
-        var role1 = message.guild.roles.cache.filter( r=>r.name.toLowerCase().indexOf(role)>-1 ).first();
-        
+     var arg =  message.content.split(' ').slice(1).join(' ')//   
       if (!role1) return message.reply(error2)
       message.react('✅');
         if(!json[message.guild.id]) { json[ message.guild.id ] = { slot: 1 } }
-           embed.addField(`> \`SLOT ${json[message.guild.id].slot}:\``, `${role1}` + `${s}`)
+           embed.addField(`> \`SLOT ${json[message.guild.id].slot}:\``, `${arg}` + `${s}`)
           json[message.guild.id].slot++;
           writeFileSync("./json.json", JSON.stringify(json, null, 2));
                 // ADD
