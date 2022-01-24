@@ -121,12 +121,28 @@ client.on("message", message => {
   let acRoom = message.guild.channels.cache.find(ch => ch.id === '932431084132646942')
                           let embed = new Discord.MessageEmbed()
                           .setColor('GOLD')
-                         .setTitle(`Lobby 1`)
+                         .setTitle(`Lobby 1 | Tier 1`)
 
 
                           acRoom.send(embed)
       
       
+  let acdRoom = message.guild.channels.cache.find(ch => ch.id === '932431084132646942')
+                          let embed = new Discord.MessageEmbed()
+                          .setColor('GOLD')
+                         .setTitle(`Lobby 1 | Tier 2`)
+
+
+                          acdRoom.send(embed)
+
+
+  let aceRoom = message.guild.channels.cache.find(ch => ch.id === '932431084132646942')
+                          let embed = new Discord.MessageEmbed()
+                          .setColor('GOLD')
+                         .setTitle(`Lobby 1 | MiX`)
+
+
+                          aceRoom.send(embed)
  }
 });
 
