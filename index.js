@@ -159,8 +159,8 @@ client.on("message", message => {
      
     if(json[message.guild.id]?.slot >= 17) return message.channel.send(error3);
              let s = (message.member.roles.cache.find(r => r.name === "Tier1") || message.member.roles.cache.find(r => r.name === "Tier2")) 
-         let s1 = (message.member.roles.cache.find(r => r.name === "Tier1")
-let s2 = (message.member.roles.cache.find(r => r.name === "Tier2")
+         let s1 = (message.member.roles.cache.find(r => r.name === "Tier1"))
+let s2 = (message.member.roles.cache.find(r => r.name === "Tier2"))
     let error = new Discord.MessageEmbed()
       .setAuthor(`FAILED`, message.guild.iconURL({ dynamic: true }))
       .setColor('RED')
