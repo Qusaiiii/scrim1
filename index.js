@@ -171,26 +171,28 @@ let s2 = (message.member.roles.cache.find(r => r.name === "Tier2"))
 let msg = '935300162249687050';
 let msg2 = '935300162656546889';
           let channel = message.guild.channels.cache.get('932431084132646942');
-    channel.messages.fetch(msg).then(msg => {
         let error2 = new Discord.MessageEmbed()
       .setAuthor(`FAILED`, message.guild.iconURL({ dynamic: true }))
       .setColor('RED')
       .setDescription('**USAGE**: 1checkin @YOUR TEAM');                                        
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      let embed = msg.embeds[0];
-let embed2 = msg2.embeds[0];
+
 
     var arg =  message.content.split(' ').slice(1).join(' ')//
       if (!arg) return message.reply(error2)
       message.react('✅');
         if(!json[message.guild.id]) { json[ message.guild.id ] = { slot: 1 } }
+            channel.messages.fetch(msg).then(msg => {
 
+      let embed = msg.embeds[0];
           if (s1) embed.addField(`> \`SLOT ${json[message.guild.id].slot}:\``, `${arg}` + `${s}`)
           json[message.guild.id].slot++;
           writeFileSync("./json.json", JSON.stringify(json, null, 2));
                 // ADD
             msg.edit(embed); 
-
+        
+    channel.messages.fetch(msg2).then(msg2 => {
+        let embed2 = msg2.embeds[0];
      
    
           if (s2) embed2.addField(`> \`SLOT ${json[message.guild.id].slot}:\``, `${arg}` + `${s}`)
@@ -199,6 +201,7 @@ let embed2 = msg2.embeds[0];
                 // ADD
             msg2.edit(embed2);      
     })
+            })
   }
 });
  
