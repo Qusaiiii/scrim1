@@ -189,22 +189,18 @@ let msg2 = '935300162656546889';
             channel.messages.fetch(msg).then(msg => {
       let embed = msg.embeds[0];
           if (s1) embed.addField(`> \`SLOT ${json[message.guild.id].slot}:\``, `${arg}` + `『 ${s} 』`)
-                // ADD
             msg.edit(embed); 
         
     channel.messages.fetch(msg2).then(msg2 => {
         let embed2 = msg2.embeds[0];
           if (s2) embed2.addField(`> \`SLOT ${json[message.guild.id].slot}:\``, `${arg}` + `『 ${s} 』`)
         
-          json[message.guild.id].slot++;
-          writeFileSync("./json.json", JSON.stringify(json, null, 2));
-                // ADD
+ 
             msg2.edit(embed2);      
         
                     channel.messages.fetch(msg3).then(msg3 => {
       let embed3 = msg3.embeds[0];
           if (s3) embed3.addField(`> \`SLOT ${json[message.guild.id].slot}:\``, `${arg}` + `『 ${s} 』`)
-                // ADD
             msg3.edit(embed3); 
                         
                                 
