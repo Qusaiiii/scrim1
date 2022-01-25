@@ -161,6 +161,8 @@ client.on("message", message => {
              let s = (message.member.roles.cache.find(r => r.name === "Tier1") || message.member.roles.cache.find(r => r.name === "Tier2")) 
          let s1 = (message.member.roles.cache.find(r => r.name === "Tier1"))
 let s2 = (message.member.roles.cache.find(r => r.name === "Tier2"))
+let s3 = (message.member.roles.cache.find(r => r.name === "MiX"))
+
     let error = new Discord.MessageEmbed()
       .setAuthor(`FAILED`, message.guild.iconURL({ dynamic: true }))
       .setColor('RED')
@@ -170,6 +172,7 @@ let s2 = (message.member.roles.cache.find(r => r.name === "Tier2"))
       
 let msg = '935300162249687050';
 let msg2 = '935300162656546889';
+      let msg3 = '935300163940008026';
           let channel = message.guild.channels.cache.get('932431084132646942');
         let error2 = new Discord.MessageEmbed()
       .setAuthor(`FAILED`, message.guild.iconURL({ dynamic: true }))
@@ -197,8 +200,19 @@ let msg2 = '935300162656546889';
           writeFileSync("./json.json", JSON.stringify(json, null, 2));
                 // ADD
             msg2.edit(embed2);      
+        
+                    channel.messages.fetch(msg3).then(msg3 => {
+      let embed3 = msg3.embeds[0];
+          if (s3) embed.addField(`> \`SLOT ${json[message.guild.id].slot}:\``, `${arg}` + `${s}`)
+                // ADD
+            msg3.edit(embed3); 
+                        
+                                
+          json[message.guild.id].slot++;
+          writeFileSync("./json.json", JSON.stringify(json, null, 2));
     })
             })
+                })
   }
 });
  
