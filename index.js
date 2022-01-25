@@ -194,7 +194,7 @@ let msg2 = '935300162656546889';
         
     channel.messages.fetch(msg2).then(msg2 => {
         let embed2 = msg2.embeds[0];
-          if (s2) embed2.addField(`> \`SLOT ${json[message.guild.id].slot}:\``, `${arg}` + `${s}`)
+          if (s2) embed2.addField(`> \`SLOT ${json[message.guild.id].slot}:\``, `${arg}` + `\`『 ${s} 』\``)
         
           json[message.guild.id].slot++;
           writeFileSync("./json.json", JSON.stringify(json, null, 2));
