@@ -223,8 +223,8 @@ let msg3 = '935300163940008026';
                          
         msg.edit(newE);
         
-            channel.messages.fetch(msg).then(msg => {
-      let embed2 = msg.embeds[0];
+            channel.messages.fetch(msg2).then(msg2 => {
+      let embed2 = msg2.embeds[0];
             
             let newEe = new Discord.MessageEmbed()
                           .setColor('GOLD')
