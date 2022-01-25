@@ -187,7 +187,6 @@ let msg2 = '935300162656546889';
       let embed = msg.embeds[0];
           if (s1) embed.addField(`> \`SLOT ${json[message.guild.id].slot}:\``, `${arg}` + `${s}`)
           json[message.guild.id].slot++;
-          writeFileSync("./json.json", JSON.stringify(json, null, 2));
                 // ADD
             msg.edit(embed); 
         
@@ -197,6 +196,7 @@ let msg2 = '935300162656546889';
    
           if (s2) embed2.addField(`> \`SLOT ${json[message.guild.id].slot}:\``, `${arg}` + `${s}`)
           json[message.guild.id].slot++;
+        
           writeFileSync("./json.json", JSON.stringify(json, null, 2));
                 // ADD
             msg2.edit(embed2);      
