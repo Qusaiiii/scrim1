@@ -217,7 +217,7 @@ let msg3 = '935300163940008026';
     
             let newE = new Discord.MessageEmbed()
                           .setColor('GOLD')
-                         .setTitle(`Lobby 1`)
+                         .setTitle(`Lobby 1 | Tier 1`)
 
 
                          
@@ -228,7 +228,7 @@ let msg3 = '935300163940008026';
             
             let newEe = new Discord.MessageEmbed()
                           .setColor('GOLD')
-                         .setTitle(`Lobby 1`)
+                         .setTitle(`Lobby 1 | Tier 2`)
 
 
                          
@@ -238,7 +238,7 @@ let msg3 = '935300163940008026';
       let embed3 = msg3.embeds[0];
             let newEee = new Discord.MessageEmbed()
                           .setColor('GOLD')
-                         .setTitle(`Lobby 1`)
+                         .setTitle(`Lobby 1 | MiX`)
 
 
                          
