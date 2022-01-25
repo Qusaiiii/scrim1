@@ -207,9 +207,10 @@ let msg2 = '935300162656546889';
  
       client.on("message", message => { 
   if (message.content.startsWith(`${prefix}lbc`)) {
-      let msg = '933343245725999134';
-
-    
+let msg = '935300162249687050';
+let msg2 = '935300162656546889';
+let msg3 = '935300163940008026';
+      
     let channel = message.guild.channels.cache.get('932431084132646942');
     channel.messages.fetch(msg).then(msg => {
       let embed = msg.embeds[0];
@@ -221,6 +222,27 @@ let msg2 = '935300162656546889';
 
                          
         msg.edit(newE);
+        
+            channel.messages.fetch(msg).then(msg => {
+      let embed2 = msg.embeds[0];
+            
+            let newEe = new Discord.MessageEmbed()
+                          .setColor('GOLD')
+                         .setTitle(`Lobby 1`)
+
+
+                         
+        msg2.edit(newEe);
+                
+                channel.messages.fetch(msg3).then(msg3 => {
+      let embed3 = msg3.embeds[0];
+            let newEee = new Discord.MessageEmbed()
+                          .setColor('GOLD')
+                         .setTitle(`Lobby 1`)
+
+
+                         
+        msg3.edit(newEee);
                                                          let success = new Discord.MessageEmbed()
       .setAuthor(`SUCCESS`, message.guild.iconURL({ dynamic: true }))
       .setColor('GREEN')
@@ -230,6 +252,8 @@ let msg2 = '935300162656546889';
         message.channel.send(success);
         
     })
+                })
+        })
   }                                     
 });
 
