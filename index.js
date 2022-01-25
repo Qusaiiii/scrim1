@@ -158,7 +158,7 @@ client.on("message", message => {
       .setDescription('**REASON**: Lobby 1 Is FULL');
      
     if(json[message.guild.id]?.slot >= 17) return message.channel.send(error3);
-             let s = (message.member.roles.cache.find(r => r.name === "Tier1") || message.member.roles.cache.find(r => r.name === "Tier2")) 
+             let s = (message.member.roles.cache.find(r => r.name === "Tier1") || message.member.roles.cache.find(r => r.name === "Tier2") || message.member.roles.cache.find(r => r.name === "MiX")) 
          let s1 = (message.member.roles.cache.find(r => r.name === "Tier1"))
 let s2 = (message.member.roles.cache.find(r => r.name === "Tier2"))
 let s3 = (message.member.roles.cache.find(r => r.name === "MiX"))
@@ -203,7 +203,7 @@ let msg2 = '935300162656546889';
         
                     channel.messages.fetch(msg3).then(msg3 => {
       let embed3 = msg3.embeds[0];
-          if (s3) embed.addField(`> \`SLOT ${json[message.guild.id].slot}:\``, `${arg}` + `${s}`)
+          if (s3) embed.addField(`> \`SLOT ${json[message.guild.id].slot}:\``, `${arg}` + `『 ${s} 』`)
                 // ADD
             msg3.edit(embed3); 
                         
