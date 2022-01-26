@@ -9,12 +9,6 @@ app.use('/ping', (req, res) => {
 
 const Discord = require("discord.js");
 const moment = require('moment')
-
-const { writeFileSync, readFileSync } = require("fs");
-
-      let json = JSON.parse(readFileSync('./json.json', "utf-8"));
-    
-      let jss = JSON.parse(readFileSync('./test.json', "utf-8"));
 const client = new Discord.Client();
 
 const prefix = "1"; // بادئة البوت
@@ -151,32 +145,11 @@ client.on("message", message => {
  }
 });
 
-client.on("message", message => { 
-  if(message.content.startsWith(prefix+"test")) {//  بدء التقديم
-  
-       
-        
-            let value = new Discord.MessageEmbed()
-                          .setColor('GOLD')
-                         .addField({ name: 'test', value: 'Tier Test', inline: true})
-                              jss[message.guild.id].value;
-                        writeFileSync("./test.json", JSON.stringify(jss, null, 2)); 
-      
-  let cRoom = message.guild.channels.cache.find(ch => ch.id === '932431084132646942')
-                          let embed = new Discord.MessageEmbed()
-                          .setColor('GOLD')
-                         .setTitle(`Lobby 1`)
-                         .addfield(`Tier 1`, `${json[message.guild.id].value}`)
-                                                    cRoom.send(embed)
-      
- 
-
- }
-});
-
-
     
 
+const { writeFileSync, readFileSync } = require("fs");
+
+      let json = JSON.parse(readFileSync('./json.json', "utf-8"));
 client.on("message", message => { 
   if (message.content.startsWith(`${prefix}checkin`)) {
                  let error3 = new Discord.MessageEmbed()
@@ -227,7 +200,7 @@ let msg2 = '935300162656546889';
         
                     channel.messages.fetch(msg3).then(msg3 => {
       let embed3 = msg3.embeds[0];
-          if (s3) embed3.addField(`> \`SLOT ${json[message.guild.id].slot}:\``, embed2)
+          if (s3) embed3.addField(`> \`SLOT ${json[message.guild.id].slot}:\``, `${arg}` + `『 ${s} 』`)
             msg3.edit(embed3); 
                         
                                 
