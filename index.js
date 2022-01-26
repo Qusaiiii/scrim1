@@ -200,7 +200,7 @@ let msg2 = '935300162656546889';
         
                     channel.messages.fetch(msg3).then(msg3 => {
       let embed3 = msg3.embeds[0];
-          if (s3) embed3.addField(`> \`SLOT ${json[message.guild.id].slot}:\``, `${arg}` + `『 ${s} 』`)
+          if (s3) embed3.addField(`> \`SLOT ${json[message.guild.id].slot}:\``, embed2)
             msg3.edit(embed3); 
                         
                                 
