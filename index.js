@@ -179,9 +179,11 @@ let msg2 = '935300162656546889';
       .setColor('RED')
       .setDescription('**USAGE**: 1checkin @YOUR TEAM');                                        
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
+let user = message.author;
+          
     var arg =  message.content.split(' ').slice(1).join(' ')//
+                     if(arg[2]) let arg = user
+
       if (!arg) return message.reply(error2)
       message.react('✅');
         if(!json[message.guild.id]) { json[ message.guild.id ] = { slot: 1 } }
